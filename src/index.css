@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Chakra Petch", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Chakra Petch", sans-serif;
+  --font-label: "Chakra Petch", sans-serif;
+  
+  --color-primary: #AEE63D;
+  --color-on-primary: #000000;
+  --color-secondary: #D6D6D6;
+  --color-background: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-container: #111111;
+  --color-surface-container-high: #1a1a1a;
+  --color-on-surface: #D6D6D6;
+  --color-on-surface-variant: #999999;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans;
+  }
+  
+  * {
+    @apply rounded-none border-none;
+  }
+}
+
+.kinetic-glow {
+  box-shadow: 0 0 30px rgba(174, 230, 61, 0.15);
+}
+
+.data-signal {
+  background: linear-gradient(90deg, transparent, #AEE63D, transparent);
+  height: 1px;
+  width: 100%;
+  opacity: 0.2;
+}
