@@ -37,9 +37,9 @@ const faqItems = [
 
 export default function FAQ() {
   return (
-    <section className="border-t border-white/5 bg-black px-6 py-20 sm:py-24 md:py-32 lg:py-40">
+    <section className="border-t border-white/5 bg-black px-6 py-10 sm:py-22 md:py-26 lg:py-32">
       <div className="mx-auto max-w-5xl">
-        <h2 className="font-headline mb-10 text-center text-4xl font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-14 md:text-6xl">
+        <h2 className="font-headline mb-6 text-center text-4xl font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-14 md:text-6xl">
           FAQ
         </h2>
         <div className="space-y-px bg-white/5">
@@ -66,7 +66,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
   return (
     <div
-      className="bg-background group cursor-pointer border border-white/5 px-8 py-10 md:px-10"
+      className="bg-background group cursor-pointer border border-white/5 px-8 py-8 sm:py-10 md:px-10"
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center justify-between">

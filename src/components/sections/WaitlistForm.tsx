@@ -298,7 +298,7 @@ export default function WaitlistForm({
 }: WaitlistFormProps) {
   return (
     <section
-      className="bg-background px-6 py-24 sm:py-28 md:py-40"
+      className="bg-background px-6 py-10 sm:py-22 md:py-26 lg:py-32"
       id="application"
     >
       <div className="mx-auto max-w-4xl">

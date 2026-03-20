@@ -2,7 +2,7 @@ import LogoIcon from "./icons/LogoIcon"
 
 export default function Header() {
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-black/90 backdrop-blur-xl">
+    <nav className="absolute top-0 z-50 w-full border-b border-white/5 bg-black/90 backdrop-blur-xl sm:fixed">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
         <a
           href="/"

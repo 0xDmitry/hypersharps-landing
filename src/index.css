@@ -14,6 +14,18 @@
   --color-surface-container-high: #1a1a1a;
   --color-on-surface: #d6d6d6;
   --color-on-surface-variant: #999999;
+
+  --animate-appearance: appearance 0.8s ease-in-out;
+  @keyframes appearance {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @layer base {

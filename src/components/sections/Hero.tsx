@@ -6,14 +6,9 @@ type HeroProps = {
 
 export default function Hero({ onSelectWaitlistTab }: HeroProps) {
   return (
-    <section className="bg-background relative flex min-h-screen flex-col justify-start overflow-hidden px-6 pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-16 lg:justify-center lg:pt-28">
+    <section className="bg-background relative flex min-h-screen flex-col justify-start overflow-hidden px-6 pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-16 lg:justify-center lg:pt-28 lg:pb-0">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-12">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="z-10 lg:col-span-7"
-        >
+        <div className="animate-appearance lg:col-span-7">
           <h1 className="font-headline mb-8 text-6xl leading-[0.85] font-bold tracking-tighter uppercase md:text-8xl lg:text-[100px]">
             Where <span className="text-primary italic">Sharps</span> Scale
           </h1>
@@ -46,8 +41,7 @@ export default function Hero({ onSelectWaitlistTab }: HeroProps) {
               System Status: Initializing Early Access Protocol
             </p>
           </div>
-        </motion.div>
-
+        </div>
         <div className="relative lg:col-span-5">
           <div className="relative flex aspect-square items-center justify-center">
             <div className="bg-primary/5 absolute inset-0 rounded-full blur-[120px]"></div>

@@ -47,7 +47,7 @@ function StepCard({
 }) {
   return (
     <div className="flex h-full items-start gap-4 sm:gap-6 lg:gap-10">
-      <div className="border-primary/20 font-headline text-primary flex h-14 w-14 flex-shrink-0 items-center justify-center border text-lg font-bold sm:h-16 sm:w-16 sm:text-xl">
+      <div className="border-primary/50 font-headline text-primary flex h-14 w-14 shrink-0 items-center justify-center border border-solid text-lg font-bold sm:h-16 sm:w-16 sm:text-xl">
         {num}
       </div>
       <div>
@@ -65,18 +65,17 @@ function StepCard({
 export default function HowItWorks() {
   return (
     <section
-      className="bg-background px-6 py-20 sm:py-24 md:py-32 lg:py-40"
+      className="bg-background px-6 py-10 sm:py-22 md:py-26 lg:py-32"
       id="sharps"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center sm:mb-16 md:mb-20 lg:mb-32">
-          <h2 className="font-headline mb-8 text-4xl leading-[0.92] font-bold tracking-tighter uppercase sm:text-5xl md:text-6xl lg:text-8xl">
+        <div className="mb-6 text-center sm:mb-16 md:mb-20 lg:mb-32">
+          <h2 className="font-headline mb-6 text-4xl leading-[0.92] font-bold tracking-tighter uppercase sm:mb-8 sm:text-5xl md:text-6xl lg:text-8xl">
             How HyperSharps works
           </h2>
-          <div className="data-signal mx-auto mb-8"></div>
+          <div className="data-signal mx-auto mb-6 sm:mb-8"></div>
           <p className="text-on-surface-variant mx-auto max-w-xl text-base font-light tracking-[0.2em] uppercase sm:text-lg sm:tracking-[0.3em] md:text-xl">
-            A new layer for prediction markets — connecting proven traders with
-            capital seeking real edge
+            A new layer for prediction markets
           </p>
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:hidden">
