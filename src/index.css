@@ -37,22 +37,6 @@
     @apply rounded-none border-none;
   }
 
-  /* input,
-  textarea {
-    color-scheme: dark;
-  }
-
-  input:is(:-webkit-autofill, :autofill),
-  textarea:is(:-webkit-autofill, :autofill) {
-    -webkit-text-fill-color: var(--color-on-surface) !important;
-    caret-color: var(--color-on-surface);
-    -webkit-box-shadow: 0 0 0 1000px var(--color-background) inset !important;
-    box-shadow: 0 0 0 1000px var(--color-background) inset !important;
-    transition:
-      background-color 99999s ease-in-out 0s,
-      color 99999s ease-in-out 0s;
-  } */
-
   input,
   textarea {
     color-scheme: dark;
