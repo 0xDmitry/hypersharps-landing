@@ -54,7 +54,7 @@ function StepCard({
         <h4 className="font-headline mb-3 text-xl font-bold uppercase sm:text-2xl">
           {title}
         </h4>
-        <p className="text-on-surface-variant text-sm leading-relaxed font-light uppercase">
+        <p className="text-on-surface-variant leading-relaxed font-light uppercase">
           {desc}
         </p>
       </div>

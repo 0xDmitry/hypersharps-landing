@@ -19,8 +19,8 @@ export default function App() {
       <Header />
       <Hero onSelectWaitlistTab={setActiveWaitlistTab} />
       <Problem />
-      <HowItWorks />
       <Solution />
+      <HowItWorks />
       <WaitlistForm
         activeTab={activeWaitlistTab}
         onSelectWaitlistTab={setActiveWaitlistTab}
