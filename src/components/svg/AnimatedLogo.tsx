@@ -81,8 +81,8 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
             values="360 600 600; 350 600 600"
             keyTimes="0; 1"
             calcMode="spline"
-            keySplines="0.42 0 0.58 1"
-            dur="2.5s"
+            keySplines="0 0 0.58 1"
+            dur="1.25s"
             fill="freeze"
           />
           <animateTransform
@@ -117,8 +117,8 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
             values="360 600 600; 370 600 600"
             keyTimes="0; 1"
             calcMode="spline"
-            keySplines="0.42 0 0.58 1"
-            dur="2.5s"
+            keySplines="0 0 0.58 1"
+            dur="1.25s"
             fill="freeze"
           />
           <animateTransform
@@ -149,8 +149,8 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
               values="360 600 600; 370 600 600"
               keyTimes="0; 1"
               calcMode="spline"
-              keySplines="0.42 0 0.58 1"
-              dur="2.5s"
+              keySplines="0 0 0.58 1"
+              dur="1.25s"
               fill="freeze"
             />
             <animateTransform
