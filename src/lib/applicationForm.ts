@@ -201,7 +201,7 @@ export function validateApplicationValues(
 export function parseApplicationPayload(payload: unknown) {
   if (!payload || typeof payload !== "object") {
     return {
-      formError: "Invalid application payload.",
+      formError: "Invalid application payload",
     }
   }
 
@@ -210,7 +210,7 @@ export function parseApplicationPayload(payload: unknown) {
 
   if (!isApplicationKind(kind)) {
     return {
-      formError: "Invalid application type.",
+      formError: "Invalid application type",
     }
   }
 
@@ -219,7 +219,7 @@ export function parseApplicationPayload(payload: unknown) {
   if (!validation.isValid) {
     return {
       errors: validation.errors,
-      formError: "Please complete all required fields.",
+      formError: "Please complete all required fields",
     }
   }
 

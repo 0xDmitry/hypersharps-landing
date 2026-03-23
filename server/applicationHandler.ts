@@ -232,6 +232,6 @@ export async function handleApplicationRequest(
   }
 
   sendJson(response, 200, {
-    message: "Application received. We will contact you soon",
+    message: "Application received\nWe will contact you soon",
   })
 }

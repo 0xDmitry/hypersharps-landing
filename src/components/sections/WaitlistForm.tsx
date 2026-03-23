@@ -29,8 +29,8 @@ const feedbackToneClassNames: Record<
   Exclude<SubmissionStatus, "idle" | "submitting">,
   string
 > = {
-  success: "border-primary/35 bg-primary/10 text-on-surface",
-  error: "border-red-500/40 bg-red-500/10 text-red-100",
+  success: "border-primary/35 bg-primary/30 text-on-surface",
+  error: "border-red-500/20 bg-red-500/10 text-[#FF4C4C]",
 }
 
 function ApplicationField({
@@ -94,7 +94,7 @@ function ApplicationField({
         />
       )}
       <p
-        className={`text-sm ${error ? "text-red-300" : "text-transparent"} min-h-5`}
+        className={`text-sm ${error ? "text-[#FF4C4C]" : "text-transparent"} min-h-5`}
         id={error ? errorId : undefined}
       >
         {error || " "}
@@ -178,7 +178,7 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
 
     if (!validation.isValid) {
       setFeedback({
-        message: "Please complete all required fields.",
+        message: "Please complete all required fields",
         status: "error",
       })
       return
@@ -210,7 +210,7 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
         setErrors(result.errors ?? {})
         setFeedback({
           message:
-            result.message || "Unable to submit the application right now.",
+            result.message || "Unable to submit the application right now",
           status: "error",
         })
         return
@@ -221,12 +221,12 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
       setTouchedFields({})
       setFeedback({
         message:
-          result.message || "Application received. We will contact you soon.",
+          result.message || "Application received\nWe will contact you soon",
         status: "success",
       })
     } catch {
       setFeedback({
-        message: "Unable to submit the application right now.",
+        message: "Unable to submit the application right now",
         status: "error",
       })
     }
@@ -260,27 +260,18 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
           value={values[field.name] ?? ""}
         />
       ))}
-      <div aria-live="polite" className="min-h-6">
-        {feedback.status !== "idle" ? (
-          <div
-            role={feedback.status === "error" ? "alert" : "status"}
-            className={`border px-5 py-4 ${
-              feedback.status === "submitting"
-                ? "text-on-surface-variant border-white/10 bg-white/5"
-                : feedbackToneClassNames[feedback.status]
-            }`}
-          >
-            <p className="font-headline mb-2 text-xs tracking-[0.24em] uppercase">
-              {feedback.status === "success"
-                ? "Application Received"
-                : feedback.status === "submitting"
-                  ? "Submitting"
-                  : "Submission Blocked"}
-            </p>
-            <p className="text-sm leading-relaxed">{feedback.message}</p>
+      {feedback.status !== "idle" && feedback.status !== "submitting" ? (
+        <div
+          role={feedback.status === "error" ? "alert" : "status"}
+          className={`flex items-center justify-center border px-5 py-4 ${
+            feedbackToneClassNames[feedback.status]
+          }`}
+        >
+          <div className="text-center text-sm leading-relaxed whitespace-pre-line uppercase">
+            {feedback.message}
           </div>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
       <button
         className="bg-primary text-on-primary font-headline kinetic-glow w-full cursor-pointer py-6 text-xl font-bold tracking-[0.2em] uppercase transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
         disabled={isSubmitting}
