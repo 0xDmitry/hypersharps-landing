@@ -19,9 +19,8 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
         <style>{`
           .circle {
             fill: none;
-            stroke: #d6d6d6;
-            opacity: 0.6;
-            stroke-width: 1;
+            stroke: #999999;
+            stroke-width: 2;
             stroke-linecap: butt;
             stroke-dasharray: 0.5 0.5;
             vector-effect: non-scaling-stroke;
@@ -38,10 +37,11 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
 
           .background {
             fill: #000;
+            stroke: #000;
+            stroke-width: 2;
           }
         `}</style>
       </defs>
-
       <circle className="circle" cx="600" cy="600" r="450" pathLength="57">
         <animateTransform
           attributeName="transform"
@@ -64,7 +64,6 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
           repeatCount="indefinite"
         />
       </circle>
-
       <g
         style={{ transformOrigin: "50% 50%" }}
         transform="matrix(0.258819, 0.965926, -0.965926, 0.258819, -0.000068, -0.000289)"
