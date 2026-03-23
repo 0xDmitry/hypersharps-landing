@@ -22,7 +22,8 @@ export default function Footer() {
             </h4>
             <div className="flex w-full md:justify-end">
               <a
-                href="#"
+                href="https://x.com/HyperSharps"
+                target="_blank"
                 aria-label="HyperSharps on X"
                 className="text-on-surface-variant hover:text-primary inline-flex h-11 w-11 items-center justify-center text-sm uppercase transition-colors"
               >
