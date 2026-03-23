@@ -1,5 +1,5 @@
-import LogoIcon from "./svg/LogoIcon"
-import XIcon from "./svg/XIcon"
+import LogoIcon from "./svg/icons/Logo"
+import XIcon from "./svg/icons/X"
 
 export default function Footer() {
   return (
@@ -27,7 +27,7 @@ export default function Footer() {
                 aria-label="HyperSharps on X"
                 className="text-on-surface-variant hover:text-primary inline-flex h-11 w-11 items-center justify-center text-sm uppercase transition-colors"
               >
-                <XIcon className="h-[18px] w-[18px]" />
+                <XIcon className="h-4.5 w-4.5" />
               </a>
             </div>
           </div>

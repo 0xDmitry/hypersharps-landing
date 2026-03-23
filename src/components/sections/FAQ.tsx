@@ -37,7 +37,7 @@ const faqItems = [
 
 export default function FAQ() {
   return (
-    <section className="border-t border-white/5 bg-black px-6 py-10 sm:py-22 md:py-26 lg:py-32">
+    <section className="border-t border-white/5 bg-black px-6 py-10 sm:py-22 md:py-26 lg:py-30">
       <div className="mx-auto max-w-5xl">
         <h2 className="font-headline mb-6 text-center text-4xl font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-14 md:text-6xl">
           FAQ

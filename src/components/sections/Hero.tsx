@@ -6,7 +6,7 @@ type HeroProps = {
 
 export default function Hero({ onSelectWaitlistTab }: HeroProps) {
   return (
-    <section className="bg-background relative flex flex-col justify-start overflow-hidden px-6 pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-16 lg:justify-center lg:pt-28">
+    <section className="bg-background relative flex flex-col justify-start overflow-hidden px-6 pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-16 lg:min-h-screen lg:justify-center lg:pt-28">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-12">
         <div className="animate-appearance lg:col-span-7">
           <h1 className="font-headline mb-8 text-6xl leading-[0.85] font-bold tracking-tighter uppercase md:text-8xl lg:text-[100px]">
