@@ -9,6 +9,7 @@ import {
   type ApplicationKind,
   type ApplicationValues,
 } from "../../lib/applicationForm"
+import { AnimatePresence, motion } from "motion/react"
 
 type WaitlistFormProps = {
   activeTab: "sharp" | "allocator"
@@ -30,7 +31,7 @@ const feedbackToneClassNames: Record<
   string
 > = {
   success: "border-primary/35 bg-primary/30 text-on-surface",
-  error: "border-red-500/20 bg-red-500/10 text-[#FF4C4C]",
+  error: "border-red-500/20 bg-red-500/10 text-[#f96969]",
 }
 
 function ApplicationField({
@@ -55,7 +56,7 @@ function ApplicationField({
   const className = `${inputClassName} ${error ? "border-primary" : "border-white/10 focus:border-primary"} ${field.type === "textarea" ? "resize-none" : ""}`
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3 sm:gap-4">
       <label
         className="font-headline text-primary block text-xs tracking-[0.3em] uppercase"
         htmlFor={inputId}
@@ -94,7 +95,7 @@ function ApplicationField({
         />
       )}
       <p
-        className={`text-sm ${error ? "text-[#FF4C4C]" : "text-transparent"} min-h-5`}
+        className={`text-sm ${error ? "text-[#f96969]" : "text-transparent"} min-h-5`}
         id={error ? errorId : undefined}
       >
         {error || " "}
@@ -127,6 +128,9 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
   }, [kind])
 
   const isSubmitting = feedback.status === "submitting"
+  const isValidationError = Object.values(errors).some(
+    (value) => value !== null,
+  )
   const fields = APPLICATION_FIELDS[kind]
 
   const handleChange = (fieldName: string, nextValue: string) => {
@@ -177,10 +181,6 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
     )
 
     if (!validation.isValid) {
-      setFeedback({
-        message: "Please complete all required fields",
-        status: "error",
-      })
       return
     }
 
@@ -233,8 +233,12 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
   }
 
   return (
-    <form className="space-y-10 p-8 md:p-16" noValidate onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+    <form
+      className="space-y-6 p-6 pt-8 sm:p-8 md:p-16"
+      noValidate
+      onSubmit={handleSubmit}
+    >
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {fields.slice(0, 2).map((field) => (
           <ApplicationField
             disabled={isSubmitting}
@@ -260,25 +264,30 @@ function ApplicationForm({ kind }: { kind: ApplicationKind }) {
           value={values[field.name] ?? ""}
         />
       ))}
-      {feedback.status !== "idle" && feedback.status !== "submitting" ? (
-        <div
-          role={feedback.status === "error" ? "alert" : "status"}
-          className={`flex items-center justify-center border px-5 py-4 ${
-            feedbackToneClassNames[feedback.status]
-          }`}
-        >
-          <div className="text-center text-sm leading-relaxed whitespace-pre-line uppercase">
-            {feedback.message}
-          </div>
-        </div>
-      ) : null}
       <button
-        className="bg-primary text-on-primary font-headline kinetic-glow w-full cursor-pointer py-6 text-xl font-bold tracking-[0.2em] uppercase transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
-        disabled={isSubmitting}
+        className="bg-primary text-on-primary font-headline kinetic-glow disabled:bg-on-surface-variant w-full cursor-pointer py-6 text-xl font-bold tracking-[0.2em] uppercase transition-all hover:brightness-110 disabled:cursor-not-allowed"
+        disabled={isSubmitting || isValidationError}
         type="submit"
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
+      <AnimatePresence>
+        {feedback.status !== "idle" && feedback.status !== "submitting" ? (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            role={feedback.status === "error" ? "alert" : "status"}
+            className={`flex items-center justify-center overflow-hidden border px-5 py-4 ${
+              feedbackToneClassNames[feedback.status]
+            }`}
+          >
+            <div className="text-center text-sm leading-relaxed whitespace-pre-line uppercase">
+              {feedback.message}
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </form>
   )
 }
@@ -299,17 +308,17 @@ export default function WaitlistForm({
           </h2>
         </div>
         <div className="bg-surface border border-white/10">
-          <div className="bg-surface border-b border-white/10 px-8 pt-8 md:px-16 md:pt-10">
+          <div className="bg-surface border-b border-white/10 px-6 pt-6 md:px-16 md:pt-10">
             <div className="bg-background flex p-1">
               <button
                 onClick={() => onSelectWaitlistTab("sharp")}
-                className={`font-headline flex-1 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "sharp" ? "text-primary border-primary bg-surface-container border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
+                className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "sharp" ? "text-primary border-primary bg-surface-container border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
               >
                 Sharp Application
               </button>
               <button
                 onClick={() => onSelectWaitlistTab("allocator")}
-                className={`font-headline flex-1 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "allocator" ? "text-primary border-primary bg-surface-container border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
+                className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "allocator" ? "text-primary border-primary bg-surface-container border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
               >
                 Allocators Waitlist
               </button>

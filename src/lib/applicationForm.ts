@@ -153,24 +153,28 @@ export function validateApplicationField(
   const field = getFieldDefinition(kind, fieldName)
 
   if (!field) {
-    return ""
+    return null
   }
 
   const normalizedValue = normalizeValue(value)
 
+  if (!normalizedValue && field.type === "textarea") {
+    return "Description is required"
+  }
+
   if (!normalizedValue) {
-    return `${field.label} is required.`
+    return `${field.label} is required`
   }
 
   if (field.type === "email" && !EMAIL_PATTERN.test(normalizedValue)) {
-    return "Enter a valid email address."
+    return "Enter a valid email address"
   }
 
   if (field.type === "url" && !isValidHttpUrl(normalizedValue)) {
-    return "Enter a valid URL."
+    return "Enter a valid URL"
   }
 
-  return ""
+  return null
 }
 
 export function validateApplicationValues(
