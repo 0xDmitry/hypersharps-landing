@@ -39,7 +39,7 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
       </defs>
 
       <g aria-hidden="true">
-        <circle className="hs-orbit" cx="512" cy="512" r="400" pathLength="12">
+        <circle className="hs-orbit" cx="512" cy="512" r="400" pathLength="57">
           <animateTransform
             attributeName="transform"
             type="rotate"
@@ -49,7 +49,7 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
             repeatCount="indefinite"
           />
         </circle>
-        <circle className="hs-orbit" cx="512" cy="512" r="250" pathLength="12">
+        <circle className="hs-orbit" cx="512" cy="512" r="250" pathLength="45">
           <animateTransform
             attributeName="transform"
             type="rotate"
