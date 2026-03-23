@@ -16,14 +16,9 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
       style={{ display: "block", overflow: "visible" }}
     >
       <defs>
-        <path
-          id="orbit-path"
-          d="M 866 512 A 354 354 0 1 1 158 512 A 354 354 0 1 1 866 512"
-        />
-
         <style>{`
           .hs-outline {
-            fill: none;
+            fill: #000;
             stroke: #aee63d;
             stroke-width: 2;
             stroke-linecap: butt;
@@ -33,25 +28,18 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
 
           .hs-orbit {
             fill: none;
-            stroke: #aee63d;
-            stroke-width: 1;
+            stroke: #d6d6d6;
             opacity: 0.6;
-            vector-effect: non-scaling-stroke;
+            stroke-width: 1;
             stroke-linecap: butt;
-          }
-
-          .hs-orbit-outer {
-            stroke-dasharray: 2% 3% 2% 3% 2% 21.33%;
-          }
-
-          .hs-orbit-inner {
-            stroke-dasharray: 2% 3% 2% 3% 2% 21.33%;
+            stroke-dasharray: 0.5 0.5;
+            vector-effect: non-scaling-stroke;
           }
         `}</style>
       </defs>
 
       <g aria-hidden="true">
-        <circle className="hs-orbit hs-orbit-outer" cx="512" cy="512" r="354">
+        <circle className="hs-orbit" cx="512" cy="512" r="400" pathLength="12">
           <animateTransform
             attributeName="transform"
             type="rotate"
@@ -61,7 +49,7 @@ export default function AnimatedLogo({ className }: AnimatedLogoProps) {
             repeatCount="indefinite"
           />
         </circle>
-        <circle className="hs-orbit hs-orbit-inner" cx="512" cy="512" r="318">
+        <circle className="hs-orbit" cx="512" cy="512" r="250" pathLength="12">
           <animateTransform
             attributeName="transform"
             type="rotate"
