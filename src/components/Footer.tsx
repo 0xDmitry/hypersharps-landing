@@ -1,5 +1,5 @@
-import LogoIcon from "./icons/LogoIcon"
-import XIcon from "./icons/XIcon"
+import LogoIcon from "./svg/LogoIcon"
+import XIcon from "./svg/XIcon"
 
 export default function Footer() {
   return (

@@ -1,4 +1,4 @@
-import { motion } from "motion/react"
+import AnimatedLogo from "../svg/AnimatedLogo"
 
 type HeroProps = {
   onSelectWaitlistTab: (tab: "sharp" | "allocator") => void
@@ -44,38 +44,7 @@ export default function Hero({ onSelectWaitlistTab }: HeroProps) {
         </div>
         <div className="relative lg:col-span-5">
           <div className="relative flex aspect-square items-center justify-center">
-            <div className="bg-primary/5 absolute inset-0 rounded-full blur-[120px]"></div>
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="relative h-full w-full"
-            >
-              <svg className="h-full w-full opacity-30" viewBox="0 0 400 400">
-                <circle
-                  cx="200"
-                  cy="200"
-                  r="120"
-                  fill="none"
-                  stroke="#D6D6D6"
-                  strokeDasharray="1 10"
-                  strokeWidth="0.1"
-                />
-                <circle
-                  cx="200"
-                  cy="200"
-                  r="80"
-                  fill="none"
-                  stroke="#AEE63D"
-                  strokeDasharray="5 5"
-                  strokeWidth="0.1"
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="border-primary/20 h-48 w-48 border">
-                  <div className="bg-primary absolute top-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 shadow-[0_0_10px_#AEE63D]"></div>
-                </div>
-              </div>
-            </motion.div>
+            <AnimatedLogo />
           </div>
         </div>
       </div>
