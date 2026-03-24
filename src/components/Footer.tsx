@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full border-t border-white/5 bg-black px-6 py-8 sm:py-12 lg:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-2 sm:space-y-6">
-          <div className="text-primary font-headline flex items-center gap-3 text-2xl font-medium tracking-tighter uppercase">
+          <div className="text-primary font-headline flex items-center gap-3 text-2xl font-medium tracking-tight uppercase">
             <LogoIcon className="h-8 w-8" />
             HyperSharps
           </div>

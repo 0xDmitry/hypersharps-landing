@@ -303,7 +303,7 @@ export default function WaitlistForm({
     >
       <div className="mx-auto max-w-4xl">
         <div className="mb-12 text-center sm:mb-16 md:mb-20">
-          <h2 className="font-headline mb-6 text-4xl font-bold tracking-tighter uppercase sm:mb-8 sm:text-5xl md:text-7xl">
+          <h2 className="font-headline mb-6 text-4xl font-bold tracking-tight uppercase sm:mb-8 sm:text-5xl md:text-7xl">
             Join the Vanguard
           </h2>
         </div>

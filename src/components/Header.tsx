@@ -7,7 +7,7 @@ export default function Header() {
         <a
           href="/"
           aria-label="Go to home page"
-          className="text-primary font-headline flex items-center gap-5 text-[2rem] font-medium tracking-tighter md:text-[2.5rem]"
+          className="text-primary font-headline flex items-center gap-5 text-[2rem] font-medium tracking-tight md:text-[2.5rem]"
         >
           <LogoIcon className="h-11 w-11 md:h-12 md:w-12" />
           HYPERSHARPS

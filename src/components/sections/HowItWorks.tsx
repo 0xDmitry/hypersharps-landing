@@ -70,7 +70,7 @@ export default function HowItWorks() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 text-center sm:mb-16 md:mb-20 lg:mb-32">
-          <h2 className="font-headline mb-6 text-4xl leading-[0.92] font-bold tracking-tighter uppercase sm:mb-8 sm:text-5xl md:text-6xl lg:text-8xl">
+          <h2 className="font-headline mb-6 text-4xl leading-[0.92] font-bold tracking-tight uppercase sm:mb-8 sm:text-5xl md:text-6xl lg:text-8xl">
             How HyperSharps works
           </h2>
           <div className="data-signal mx-auto mb-6 sm:mb-8"></div>

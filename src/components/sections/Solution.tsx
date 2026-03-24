@@ -29,8 +29,8 @@ export default function Solution() {
           <span className="text-primary font-label mb-6 block text-xs tracking-[0.5em] uppercase">
             02. The Solution
           </span>
-          <h2 className="font-headline text-5xl leading-[0.9] font-bold tracking-tighter uppercase md:text-7xl">
-            Built for Performance
+          <h2 className="font-headline text-5xl leading-[0.9] font-bold tracking-tight uppercase md:text-7xl">
+            Follow Decisions
             <br />
             Not Noise
           </h2>

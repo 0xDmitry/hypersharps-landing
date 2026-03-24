@@ -29,7 +29,7 @@ export default function Problem() {
           <span className="text-primary font-label mb-6 block text-xs tracking-[0.5em] uppercase">
             01. The Problem
           </span>
-          <h2 className="font-headline text-5xl leading-[0.9] font-bold tracking-tighter uppercase md:text-7xl">
+          <h2 className="font-headline text-5xl leading-[0.9] font-bold tracking-tight uppercase md:text-7xl">
             Sharps Have Edge
             <br />
             Retail Don&apos;t

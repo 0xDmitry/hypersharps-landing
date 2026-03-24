@@ -7,7 +7,7 @@ export default function FinalCTA({ onSelectWaitlistTab }: FinalCTAProps) {
     <section className="bg-background relative overflow-hidden px-6 py-12 text-center sm:py-32 md:py-40 lg:py-48">
       <div className="bg-primary/5 absolute inset-0 blur-[150px]"></div>
       <div className="relative z-10 mx-auto max-w-5xl">
-        <h2 className="font-headline mb-10 text-4xl leading-[0.9] font-bold tracking-tighter uppercase sm:mb-12 sm:text-5xl md:mb-16 md:text-8xl">
+        <h2 className="font-headline mb-10 text-4xl leading-[0.9] font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-16 md:text-8xl">
           The future of predictions is{" "}
           <span className="text-primary italic">capitalized intelligence</span>
         </h2>
@@ -15,14 +15,14 @@ export default function FinalCTA({ onSelectWaitlistTab }: FinalCTAProps) {
           <a
             href="#application"
             onClick={() => onSelectWaitlistTab("sharp")}
-            className="bg-primary text-on-primary font-headline px-12 py-6 text-center text-2xl font-bold tracking-tighter uppercase transition-all hover:brightness-110"
+            className="bg-primary text-on-primary font-headline px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all hover:brightness-110"
           >
             Apply as a Sharp
           </a>
           <a
             href="#application"
             onClick={() => onSelectWaitlistTab("allocator")}
-            className="bg-surface text-secondary font-headline hover:bg-secondary/5 lg:border-secondary/40 border border-white/10 px-12 py-6 text-center text-2xl font-bold tracking-tighter uppercase transition-all lg:bg-transparent"
+            className="bg-surface text-secondary font-headline hover:bg-secondary/5 lg:border-secondary/40 border border-white/10 px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all lg:bg-transparent"
           >
             Join as an Allocator
           </a>
