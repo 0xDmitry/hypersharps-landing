@@ -2,9 +2,13 @@ import AnimatedLogo from "../svg/AnimatedLogo"
 
 type HeroProps = {
   onSelectWaitlistTab: (tab: "sharp" | "allocator") => void
+  isApplicationSubmitted: boolean
 }
 
-export default function Hero({ onSelectWaitlistTab }: HeroProps) {
+export default function Hero({
+  onSelectWaitlistTab,
+  isApplicationSubmitted,
+}: HeroProps) {
   return (
     <section className="bg-background relative flex flex-col justify-start overflow-hidden px-6 pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-16 lg:min-h-screen lg:justify-center lg:pt-28">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-12">
@@ -16,7 +20,20 @@ export default function Hero({ onSelectWaitlistTab }: HeroProps) {
             HyperSharps connects top prediction market traders with retail
             traders seeking proven edge
           </p>
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+          {isApplicationSubmitted && (
+            <div className="flex items-center gap-3">
+              <div
+                aria-hidden="true"
+                className="bg-primary h-2 w-2 shrink-0 animate-pulse rounded-full"
+              ></div>
+              <p className="font-label text-on-surface-variant text-[10px] tracking-[0.4em] uppercase">
+                System Status: Initializing Early Access Protocol
+              </p>
+            </div>
+          )}
+          <div
+            className={`mb-8 flex flex-col gap-4 sm:flex-row ${isApplicationSubmitted && "pointer-events-none hidden md:flex md:opacity-0"}`}
+          >
             <a
               href="#application"
               onClick={() => onSelectWaitlistTab("sharp")}
@@ -32,15 +49,17 @@ export default function Hero({ onSelectWaitlistTab }: HeroProps) {
               Join as an Allocator
             </a>
           </div>
-          <div className="flex items-center gap-3">
-            <div
-              aria-hidden="true"
-              className="bg-primary h-2 w-2 shrink-0 animate-pulse rounded-full"
-            ></div>
-            <p className="font-label text-on-surface-variant text-[10px] tracking-[0.4em] uppercase">
-              System Status: Initializing Early Access Protocol
-            </p>
-          </div>
+          {!isApplicationSubmitted && (
+            <div className="flex items-center gap-3">
+              <div
+                aria-hidden="true"
+                className="bg-primary h-2 w-2 shrink-0 animate-pulse rounded-full"
+              ></div>
+              <p className="font-label text-on-surface-variant text-[10px] tracking-[0.4em] uppercase">
+                System Status: Initializing Early Access Protocol
+              </p>
+            </div>
+          )}
         </div>
         <div className="relative hidden md:block lg:col-span-5">
           <div className="relative flex aspect-square items-center justify-center">

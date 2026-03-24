@@ -7,26 +7,37 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/sections/Hero"
 import Problem from "./components/sections/Problem"
-import WaitlistForm from "./components/sections/WaitlistForm"
+import Waitlist from "./components/sections/Waitlist"
 
 export default function App() {
   const [activeWaitlistTab, setActiveWaitlistTab] = useState<
     "sharp" | "allocator"
   >("sharp")
 
+  const [isApplicationSubmitted, setIsApplicationSubmitted] =
+    useState<boolean>(false)
+
   return (
     <div className="bg-background text-on-surface selection:bg-primary selection:text-on-primary min-h-screen">
-      <Header />
-      <Hero onSelectWaitlistTab={setActiveWaitlistTab} />
+      <Header isApplicationSubmitted={isApplicationSubmitted} />
+      <Hero
+        onSelectWaitlistTab={setActiveWaitlistTab}
+        isApplicationSubmitted={isApplicationSubmitted}
+      />
       <Problem />
       <Solution />
       <HowItWorks />
-      <WaitlistForm
+      <Waitlist
         activeTab={activeWaitlistTab}
         onSelectWaitlistTab={setActiveWaitlistTab}
+        isApplicationSubmitted={isApplicationSubmitted}
+        onApplicationSubmit={() => setIsApplicationSubmitted(true)}
       />
       <FAQ />
-      <FinalCTA onSelectWaitlistTab={setActiveWaitlistTab} />
+      <FinalCTA
+        onSelectWaitlistTab={setActiveWaitlistTab}
+        isApplicationSubmitted={isApplicationSubmitted}
+      />
       <Footer />
     </div>
   )

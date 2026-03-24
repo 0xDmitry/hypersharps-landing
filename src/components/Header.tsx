@@ -1,6 +1,10 @@
 import LogoIcon from "./svg/icons/Logo"
 
-export default function Header() {
+type HeaderProps = {
+  isApplicationSubmitted: boolean
+}
+
+export default function Header({ isApplicationSubmitted }: HeaderProps) {
   return (
     <nav className="absolute top-0 z-50 w-full border-b border-white/5 bg-black/90 backdrop-blur-xl sm:fixed">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4">
@@ -12,12 +16,14 @@ export default function Header() {
           <LogoIcon className="h-11 w-11 md:h-12 md:w-12" />
           HYPERSHARPS
         </a>
-        <a
-          href="#application"
-          className="bg-primary text-on-primary font-headline hidden px-6 py-2.5 text-sm font-bold tracking-wider uppercase transition-all hover:brightness-110 md:inline-block"
-        >
-          Request Early Access
-        </a>
+        {!isApplicationSubmitted && (
+          <a
+            href="#application"
+            className="bg-primary text-on-primary font-headline hidden px-6 py-2.5 text-sm font-bold tracking-wider uppercase transition-all hover:brightness-110 md:inline-block"
+          >
+            Request Early Access
+          </a>
+        )}
       </div>
     </nav>
   )
