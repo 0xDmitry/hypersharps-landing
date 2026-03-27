@@ -20,24 +20,26 @@ export default function App() {
   return (
     <div className="bg-background text-on-surface selection:bg-primary selection:text-on-primary min-h-screen">
       <Header isApplicationSubmitted={isApplicationSubmitted} />
-      <Hero
-        onSelectWaitlistTab={setActiveWaitlistTab}
-        isApplicationSubmitted={isApplicationSubmitted}
-      />
-      <Problem />
-      <Solution />
-      <HowItWorks />
-      <Waitlist
-        activeTab={activeWaitlistTab}
-        onSelectWaitlistTab={setActiveWaitlistTab}
-        isApplicationSubmitted={isApplicationSubmitted}
-        onApplicationSubmit={() => setIsApplicationSubmitted(true)}
-      />
-      <FAQ />
-      <FinalCTA
-        onSelectWaitlistTab={setActiveWaitlistTab}
-        isApplicationSubmitted={isApplicationSubmitted}
-      />
+      <main>
+        <Hero
+          onSelectWaitlistTab={setActiveWaitlistTab}
+          isApplicationSubmitted={isApplicationSubmitted}
+        />
+        <Problem />
+        <Solution />
+        <HowItWorks />
+        <Waitlist
+          activeTab={activeWaitlistTab}
+          onSelectWaitlistTab={setActiveWaitlistTab}
+          isApplicationSubmitted={isApplicationSubmitted}
+          onApplicationSubmit={() => setIsApplicationSubmitted(true)}
+        />
+        <FAQ />
+        <FinalCTA
+          onSelectWaitlistTab={setActiveWaitlistTab}
+          isApplicationSubmitted={isApplicationSubmitted}
+        />
+      </main>
       <Footer isApplicationSubmitted={isApplicationSubmitted} />
     </div>
   )
