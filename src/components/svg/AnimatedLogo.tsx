@@ -101,12 +101,6 @@ const MaskShape = memo(function MaskShape({
 const AnimatedLogo = memo(function AnimatedLogo({
   className,
 }: AnimatedLogoProps) {
-  const bottomMaskId = "bottomMask"
-  const middleMaskId = "middleMask"
-  const bottomIntroId = "bottomIntro"
-  const middleIntroId = "middleIntro"
-  const topIntroId = "topIntro"
-
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +118,7 @@ const AnimatedLogo = memo(function AnimatedLogo({
     >
       <defs>
         <mask
-          id={bottomMaskId}
+          id="bottomMask"
           x="0"
           y="0"
           width="1200"
@@ -132,17 +126,54 @@ const AnimatedLogo = memo(function AnimatedLogo({
           maskUnits="userSpaceOnUse"
           maskContentUnits="userSpaceOnUse"
         >
-          <rect x="0" y="0" width="1200" height="1200" fill="#fff" />
-          <MaskShape
-            fill="#000"
-            stroke="#fff"
-            d={MIDDLE_PATH}
-            style={{ ...styles.clipMask, strokeWidth: 0 }}
-          ></MaskShape>
+          <g>
+            <rect x="0" y="0" width="1200" height="1200" fill="#fff" />
+            <MaskShape
+              fill="#000"
+              stroke="#fff"
+              d={MIDDLE_PATH}
+              style={styles.clipMask}
+            ></MaskShape>
+            <animateTransform
+              id="bottomMaskStart"
+              attributeName="transform"
+              type="rotate"
+              begin="0.1s"
+              values="360 600 600; 363 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0 0 0.58 1"
+              dur="1.25s"
+              fill="freeze"
+            />
+            <animateTransform
+              id="bottomMaskMiddle"
+              attributeName="transform"
+              type="rotate"
+              begin="bottomMaskStart.end"
+              values="363 600 600; 357 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.42 0 0.58 1"
+              dur="2.5"
+              fill="freeze"
+            />
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              begin="bottomMaskMiddle.end"
+              values="357 600 600; 360 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.42 0 1 1"
+              dur="1.25s"
+              fill="freeze"
+            />
+          </g>
         </mask>
 
         <mask
-          id={middleMaskId}
+          id="middleMask"
           x="0"
           y="0"
           width="1200"
@@ -150,24 +181,59 @@ const AnimatedLogo = memo(function AnimatedLogo({
           maskUnits="userSpaceOnUse"
           maskContentUnits="userSpaceOnUse"
         >
-          <MaskShape
-            fill="#fff"
-            stroke="#fff"
-            d={TOP_PATH}
-            style={styles.clipMask}
-            transform="rotate(60 600 600)"
-            transformOrigin="center"
-            transformBox="fill-box"
-          />
+          <g>
+            <MaskShape
+              fill="#fff"
+              stroke="#000"
+              d={BOTTOM_PATH}
+              style={{ ...styles.clipMask, strokeWidth: 0 }}
+            ></MaskShape>
+
+            <animateTransform
+              id="bottomLayerStart"
+              attributeName="transform"
+              type="rotate"
+              begin="0.1s"
+              values="360 600 600; 354 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0 0 0.58 1"
+              dur="1.25s"
+              fill="freeze"
+            />
+            <animateTransform
+              id="bottomLayerMiddle"
+              attributeName="transform"
+              type="rotate"
+              begin="bottomLayerStart.end"
+              values="354 600 600; 366 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.42 0 0.58 1"
+              dur="2.5"
+              fill="freeze"
+            />
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              begin="bottomLayerMiddle.end"
+              values="366 600 600; 360 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.42 0 1 1"
+              dur="1.25s"
+              fill="freeze"
+            />
+          </g>
         </mask>
       </defs>
 
       <g transform="rotate(75 600 600)">
-        <g mask={`url(#${bottomMaskId})`}>
+        <g mask="url(#bottomMask)">
           <g>
             <GlowingShape d={BOTTOM_PATH} fill="#000" />
             <animateTransform
-              id={bottomIntroId}
+              id="bottomLayerStart"
               attributeName="transform"
               type="rotate"
               begin="0.1s"
@@ -179,49 +245,35 @@ const AnimatedLogo = memo(function AnimatedLogo({
               fill="freeze"
             />
             <animateTransform
+              id="bottomLayerMiddle"
               attributeName="transform"
               type="rotate"
-              begin={`${bottomIntroId}.end`}
-              values="357 600 600; 363 600 600; 357 600 600"
-              keyTimes="0; 0.5; 1"
+              begin="bottomLayerStart.end"
+              values="357 600 600; 363 600 600"
+              keyTimes="0; 1"
               calcMode="spline"
-              keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
-              dur="5s"
-              repeatCount="indefinite"
+              keySplines="0.42 0 0.58 1"
+              dur="2.5"
+              fill="freeze"
+            />
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              begin="bottomLayerMiddle.end"
+              values="363 600 600; 360 600 600"
+              keyTimes="0; 1"
+              calcMode="spline"
+              keySplines="0.42 0 1 1"
+              dur="1.25s"
+              fill="freeze"
             />
           </g>
         </g>
 
-        <g mask={`url(#${middleMaskId})`}>
+        <g mask="url(#middleMask)">
           <GlowingShape d={MIDDLE_PATH} fill="none" />
           <animateTransform
-            id={middleIntroId}
-            attributeName="transform"
-            type="rotate"
-            begin="0.1s"
-            values="360 600 600; 357 600 600"
-            keyTimes="0; 1"
-            calcMode="spline"
-            keySplines="0 0 0.58 1"
-            dur="1.25s"
-            fill="freeze"
-          />
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            begin={`${middleIntroId}.end`}
-            values="357 600 600; 363 600 600; 357 600 600"
-            keyTimes="0; 0.5; 1"
-            calcMode="spline"
-            keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
-            dur="5s"
-            repeatCount="indefinite"
-          />
-        </g>
-
-        <GlowingShape d={TOP_PATH} fill="#000">
-          <animateTransform
-            id={topIntroId}
+            id="middleLayerStart"
             attributeName="transform"
             type="rotate"
             begin="0.1s"
@@ -233,15 +285,65 @@ const AnimatedLogo = memo(function AnimatedLogo({
             fill="freeze"
           />
           <animateTransform
+            id="middleLayerMiddle"
             attributeName="transform"
             type="rotate"
-            begin={`${topIntroId}.end`}
-            values="363 600 600; 357 600 600; 363 600 600"
-            keyTimes="0; 0.5; 1"
+            begin="middleLayerStart.end"
+            values="363 600 600; 357 600 600"
+            keyTimes="0; 1"
             calcMode="spline"
-            keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"
-            dur="5s"
-            repeatCount="indefinite"
+            keySplines="0.42 0 0.58 1"
+            dur="2.5"
+            fill="freeze"
+          />
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            begin="middleLayerMiddle.end"
+            values="357 600 600; 360 600 600"
+            keyTimes="0; 1"
+            calcMode="spline"
+            keySplines="0.42 0 1 1"
+            dur="1.25s"
+            fill="freeze"
+          />
+        </g>
+
+        <GlowingShape d={TOP_PATH} fill="#000">
+          <animateTransform
+            id="topLayerStart"
+            attributeName="transform"
+            type="rotate"
+            begin="0.1s"
+            values="360 600 600; 363 600 600"
+            keyTimes="0; 1"
+            calcMode="spline"
+            keySplines="0 0 0.58 1"
+            dur="1.25s"
+            fill="freeze"
+          />
+          <animateTransform
+            id="topLayerMiddle"
+            attributeName="transform"
+            type="rotate"
+            begin="topLayerStart.end"
+            values="363 600 600; 357 600 600"
+            keyTimes="0; 1"
+            calcMode="spline"
+            keySplines="0.42 0 0.58 1"
+            dur="2.5"
+            fill="freeze"
+          />
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            begin="topLayerMiddle.end"
+            values="357 600 600; 360 600 600"
+            keyTimes="0; 1"
+            calcMode="spline"
+            keySplines="0.42 0 1 1"
+            dur="1.25s"
+            fill="freeze"
           />
         </GlowingShape>
       </g>
