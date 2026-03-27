@@ -77,11 +77,16 @@ export default function Hero({
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               width="1200"
               height="1200"
               aria-hidden="true"
+              disablePictureInPicture
             >
+              <source
+                src="/animated-glowing-logo-hevc.mov"
+                type='video/quicktime; codecs="hvc1"'
+              />
               <source
                 src="/animated-glowing-logo.webm"
                 type='video/webm; codecs="vp9"'
