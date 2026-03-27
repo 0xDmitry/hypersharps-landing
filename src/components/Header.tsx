@@ -1,4 +1,4 @@
-import LogoIcon from "./svg/icons/Logo"
+import LogoIcon from "./icons/Logo"
 
 type HeaderProps = {
   isApplicationSubmitted: boolean

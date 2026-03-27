@@ -1,5 +1,5 @@
-import LogoIcon from "./svg/icons/Logo"
-import XIcon from "./svg/icons/X"
+import LogoIcon from "./icons/Logo"
+import XIcon from "./icons/X"
 
 type FooterProps = {
   isApplicationSubmitted: boolean
