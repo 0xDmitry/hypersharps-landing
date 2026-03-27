@@ -33,13 +33,13 @@ export default function Waitlist({
               <div className="bg-background flex p-1">
                 <button
                   onClick={() => onSelectWaitlistTab("sharp")}
-                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "sharp" ? "text-primary border-primary bg-surface border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
+                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-wide uppercase transition-all sm:tracking-widest ${activeTab === "sharp" ? "text-primary border-primary bg-surface border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
                 >
                   Sharp Application
                 </button>
                 <button
                   onClick={() => onSelectWaitlistTab("allocator")}
-                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "allocator" ? "text-primary border-primary bg-surface border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
+                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-wide uppercase transition-all sm:tracking-widest ${activeTab === "allocator" ? "text-primary border-primary bg-surface border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
                 >
                   Allocators Waitlist
                 </button>
