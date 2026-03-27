@@ -70,13 +70,23 @@ export default function Hero({
 
         <div className="relative z-0 hidden md:block lg:col-span-5">
           <div className="relative flex aspect-square items-center justify-center">
-            <HeroPulseRings className="absolute inset-0" />
-            <img
-              src="/animated-glowing-logo.webp"
-              alt="HyperSharps logo"
-              className="relative w-full max-w-136 select-none"
-              loading="eager"
-            />
+            <HeroPulseRings className="absolute inset-0 -z-10" />
+            <video
+              className="logo-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              width="1200"
+              height="1200"
+              aria-hidden="true"
+            >
+              <source
+                src="/animated-glowing-logo.webm"
+                type='video/webm; codecs="vp9"'
+              />
+            </video>
           </div>
         </div>
       </div>
