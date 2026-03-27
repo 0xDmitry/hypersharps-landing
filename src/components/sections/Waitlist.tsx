@@ -26,7 +26,7 @@ type FeedbackState = {
 }
 
 const inputClassName =
-  "bg-background text-on-surface w-full border px-6 py-4 transition-all outline-none placeholder:text-white/20 focus:ring-0"
+  "bg-background text-on-surface w-full border px-6 py-4 transition-all outline-none placeholder:text-white/40 focus:ring-0"
 
 const feedbackToneClassNames: Record<
   Exclude<SubmissionStatus, "idle" | "submitting">,
@@ -340,13 +340,13 @@ export default function Waitlist({
               <div className="bg-background flex p-1">
                 <button
                   onClick={() => onSelectWaitlistTab("sharp")}
-                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "sharp" ? "text-primary border-primary bg-surface-container border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
+                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "sharp" ? "text-primary border-primary bg-surface border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
                 >
                   Sharp Application
                 </button>
                 <button
                   onClick={() => onSelectWaitlistTab("allocator")}
-                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "allocator" ? "text-primary border-primary bg-surface-container border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
+                  className={`font-headline flex-1 px-2 py-5 font-bold tracking-widest uppercase transition-all ${activeTab === "allocator" ? "text-primary border-primary bg-surface border-b-2" : "text-on-surface-variant hover:text-on-surface"} cursor-pointer`}
                 >
                   Allocators Waitlist
                 </button>

@@ -44,7 +44,7 @@ export default function Hero({
             <a
               href="#application"
               onClick={() => onSelectWaitlistTab("allocator")}
-              className="bg-surface text-secondary font-headline hover:bg-secondary/5 lg:border-secondary/20 border border-white/10 px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all lg:bg-transparent"
+              className="bg-surface text-secondary font-headline hover:bg-surface px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all lg:bg-transparent"
             >
               Join as an Allocator
             </a>
