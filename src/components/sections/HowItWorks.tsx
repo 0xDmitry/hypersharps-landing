@@ -80,7 +80,7 @@ export default function HowItWorks() {
         </div>
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:hidden">
           <div className="border border-white/5 bg-black p-6 sm:p-8 md:p-10">
-            <div className="border-primary/20 flex items-center gap-4 border-b pb-6 sm:gap-6 sm:pb-8">
+            <div className="border-primary/20 flex items-center gap-4 border-b pb-6 pl-2 sm:gap-6 sm:pb-8 sm:pl-3">
               <TrendingUp className="text-primary h-10 w-10" />
               <h3 className="font-headline text-3xl font-bold tracking-tight uppercase sm:text-4xl">
                 For Sharps
@@ -103,7 +103,7 @@ export default function HowItWorks() {
             className="border border-white/5 bg-black p-6 sm:p-8 md:p-10"
             id="allocators"
           >
-            <div className="border-primary/20 flex items-center gap-4 border-b pb-6 sm:gap-6 sm:pb-8">
+            <div className="border-primary/20 flex items-center gap-4 border-b pb-6 pl-2 sm:gap-6 sm:pb-8 sm:pl-3">
               <Banknote className="text-primary h-10 w-10" />
               <h3 className="font-headline text-3xl font-bold tracking-tight uppercase sm:text-4xl">
                 For Allocators
@@ -125,7 +125,7 @@ export default function HowItWorks() {
         </div>
         <div className="hidden gap-x-24 gap-y-16 lg:grid lg:grid-cols-2">
           <div className="space-y-16">
-            <div className="border-primary/20 flex h-full items-center gap-6 border-b pb-8">
+            <div className="border-primary/20 flex h-full items-center gap-6 border-b pb-8 pl-3">
               <TrendingUp className="text-primary h-10 w-10" />
               <h3 className="font-headline text-4xl font-bold tracking-tight uppercase">
                 For Sharps
@@ -133,7 +133,7 @@ export default function HowItWorks() {
             </div>
           </div>
           <div className="space-y-16" id="allocators-desktop">
-            <div className="border-primary/20 flex h-full items-center gap-6 border-b pb-8">
+            <div className="border-primary/20 flex h-full items-center gap-6 border-b pb-8 pl-3">
               <Banknote className="text-primary h-10 w-10" />
               <h3 className="font-headline text-4xl font-bold tracking-tight uppercase">
                 For Allocators

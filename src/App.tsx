@@ -38,7 +38,7 @@ export default function App() {
         onSelectWaitlistTab={setActiveWaitlistTab}
         isApplicationSubmitted={isApplicationSubmitted}
       />
-      <Footer />
+      <Footer isApplicationSubmitted={isApplicationSubmitted} />
     </div>
   )
 }

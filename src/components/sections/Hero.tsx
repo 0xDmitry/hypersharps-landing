@@ -24,10 +24,10 @@ export default function Hero({
             <div className="flex items-center gap-3">
               <div
                 aria-hidden="true"
-                className="bg-primary h-2 w-2 shrink-0 animate-pulse rounded-full"
+                className="bg-primary animate-blink h-2 w-2 shrink-0 rounded-full opacity-0"
               ></div>
               <p className="font-label text-on-surface-variant text-[10px] tracking-[0.4em] uppercase">
-                System Status: Initializing Early Access Protocol
+                System Status: Early Access Protocol Activated
               </p>
             </div>
           )}
@@ -53,7 +53,7 @@ export default function Hero({
             <div className="flex items-center gap-3">
               <div
                 aria-hidden="true"
-                className="bg-primary h-2 w-2 shrink-0 animate-pulse rounded-full"
+                className="bg-primary animate-blink h-2 w-2 shrink-0 rounded-full opacity-0"
               ></div>
               <p className="font-label text-on-surface-variant text-[10px] tracking-[0.4em] uppercase">
                 System Status: Initializing Early Access Protocol

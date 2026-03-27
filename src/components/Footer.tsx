@@ -1,7 +1,11 @@
 import LogoIcon from "./svg/icons/Logo"
 import XIcon from "./svg/icons/X"
 
-export default function Footer() {
+type FooterProps = {
+  isApplicationSubmitted: boolean
+}
+
+export default function Footer({ isApplicationSubmitted }: FooterProps) {
   return (
     <footer className="w-full border-t border-white/5 bg-black px-6 py-8 sm:py-12 lg:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-8 lg:grid-cols-2 lg:gap-12">
@@ -38,7 +42,11 @@ export default function Footer() {
           © 2026 HyperSharps
         </div>
         <div className="text-on-surface-variant font-headline order-1 text-[10px] tracking-[0.4em] uppercase md:order-2">
-          <span className="block md:inline">System: Initializing / </span>
+          <span className="block md:inline">
+            {isApplicationSubmitted
+              ? "System: Activated / "
+              : "System: Initializing / "}
+          </span>
           <span className="block md:inline">Protocol: Early access</span>
         </div>
       </div>
