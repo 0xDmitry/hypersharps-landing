@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/sections/Hero"
 import Problem from "./components/sections/Problem"
-import Waitlist from "./components/sections/Waitlist"
+import Waitlist from "./components/sections/waitlist/Waitlist"
 
 export default function App() {
   const [activeWaitlistTab, setActiveWaitlistTab] = useState<

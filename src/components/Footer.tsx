@@ -28,6 +28,7 @@ export default function Footer({ isApplicationSubmitted }: FooterProps) {
               <a
                 href="https://x.com/HyperSharps"
                 target="_blank"
+                rel="noreferrer"
                 aria-label="HyperSharps on X"
                 className="text-on-surface-variant hover:text-primary inline-flex h-11 w-11 items-center justify-center text-sm uppercase transition-colors"
               >
