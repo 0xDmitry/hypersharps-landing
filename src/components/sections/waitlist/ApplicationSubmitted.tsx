@@ -1,27 +1,12 @@
-import { useEffect, useRef } from "react"
-
 type ApplicationSubmittedProps = {
-  isApplicationSubmitted: boolean
   activeTab: "sharp" | "allocator"
 }
 
 export default function ApplicationSubmitted({
-  isApplicationSubmitted,
   activeTab,
 }: ApplicationSubmittedProps) {
-  const successFeedbackRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    if (successFeedbackRef.current && isApplicationSubmitted) {
-      successFeedbackRef.current.scrollIntoView({
-        behavior: "instant",
-        block: "start",
-      })
-    }
-  }, [isApplicationSubmitted])
-
   return (
-    <div className="mx-auto max-w-7xl" ref={successFeedbackRef}>
+    <div className="mx-auto max-w-7xl">
       <div className="text-center">
         <h2 className="font-headline text-primary mb-6 text-4xl leading-[0.92] font-bold tracking-tight uppercase sm:mb-8 sm:text-5xl md:text-6xl lg:text-8xl">
           {activeTab === "sharp"

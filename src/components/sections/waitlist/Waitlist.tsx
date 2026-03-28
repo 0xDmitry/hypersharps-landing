@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react"
 import ApplicationForm from "./ApplicationForm"
 import ApplicationSubmitted from "./ApplicationSubmitted"
 
@@ -14,13 +15,25 @@ export default function Waitlist({
   isApplicationSubmitted,
   onApplicationSubmit,
 }: WaitlistProps) {
+  const successFeedbackRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (successFeedbackRef.current && isApplicationSubmitted) {
+      successFeedbackRef.current.scrollIntoView({
+        behavior: "instant",
+        block: "center",
+      })
+    }
+  }, [isApplicationSubmitted])
+
   return (
     <section
       className="bg-background px-6 py-10 sm:py-22 md:py-26 lg:py-32"
       id="waitlist"
+      ref={successFeedbackRef}
     >
       {isApplicationSubmitted ? (
-        <ApplicationSubmitted isApplicationSubmitted activeTab={activeTab} />
+        <ApplicationSubmitted activeTab={activeTab} />
       ) : (
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center sm:mb-16 md:mb-20">
