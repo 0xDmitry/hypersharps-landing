@@ -80,18 +80,16 @@ function FAQItem({ question, answer }: FAQItemProps) {
         </span>
       </div>
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden"
-          >
-            <p className="text-on-surface-variant mt-5 max-w-3xl text-base leading-relaxed font-light uppercase md:mt-6 md:text-lg">
-              {answer}
-            </p>
-          </motion.div>
-        )}
+        <motion.div
+          initial={false}
+          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+          className="overflow-hidden"
+          aria-hidden={!isOpen}
+        >
+          <p className="text-on-surface-variant mt-5 max-w-3xl text-base leading-relaxed font-light uppercase md:mt-6 md:text-lg">
+            {answer}
+          </p>
+        </motion.div>
       </AnimatePresence>
     </div>
   )
