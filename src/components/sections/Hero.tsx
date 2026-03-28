@@ -39,7 +39,7 @@ export default function Hero({
             }`}
           >
             <a
-              href="#application"
+              href="#waitlist"
               onClick={() => onSelectWaitlistTab("sharp")}
               className="bg-primary text-on-primary font-headline kinetic-glow px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all hover:brightness-110"
             >
@@ -47,7 +47,7 @@ export default function Hero({
             </a>
 
             <a
-              href="#application"
+              href="#waitlist"
               onClick={() => onSelectWaitlistTab("allocator")}
               className="bg-surface text-secondary font-headline hover:bg-surface px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all lg:bg-black"
             >

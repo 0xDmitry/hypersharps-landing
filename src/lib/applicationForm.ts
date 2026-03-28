@@ -123,10 +123,16 @@ function normalizeValue(value: unknown) {
   return typeof value === "string" ? value.trim() : ""
 }
 
-function isValidHttpUrl(value: string) {
+function isValidPolymarketProfileUrl(value: string) {
   try {
     const url = new URL(value)
-    return url.protocol === "http:" || url.protocol === "https:"
+    console.log("polymarket url", url)
+    return (
+      url.protocol === "https:" &&
+      url.host === "polymarket.com" &&
+      url.pathname.startsWith("/@") &&
+      url.pathname.length > 2
+    )
   } catch {
     return false
   }
@@ -140,7 +146,8 @@ export function getInitialApplicationValues(
   kind: ApplicationKind,
 ): ApplicationValues {
   return APPLICATION_FIELDS[kind].reduce<ApplicationValues>((values, field) => {
-    values[field.name] = ""
+    values[field.name] =
+      field.name === "polymarketProfile" ? "https://polymarket.com/@" : ""
     return values
   }, {})
 }
@@ -170,8 +177,8 @@ export function validateApplicationField(
     return "Enter a valid email address"
   }
 
-  if (field.type === "url" && !isValidHttpUrl(normalizedValue)) {
-    return "Enter a valid URL"
+  if (field.type === "url" && !isValidPolymarketProfileUrl(normalizedValue)) {
+    return "Enter a valid Polymarket profile URL"
   }
 
   return null

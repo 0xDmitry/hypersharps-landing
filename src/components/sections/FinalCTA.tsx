@@ -18,14 +18,14 @@ export default function FinalCTA({
         {!isApplicationSubmitted && (
           <div className="flex flex-col justify-center gap-6 sm:flex-row">
             <a
-              href="#application"
+              href="#waitlist"
               onClick={() => onSelectWaitlistTab("sharp")}
               className="bg-primary text-on-primary font-headline px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all hover:brightness-110"
             >
               Apply as a Sharp
             </a>
             <a
-              href="#application"
+              href="#waitlist"
               onClick={() => onSelectWaitlistTab("allocator")}
               className="bg-surface text-secondary font-headline hover:bg-surface px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all lg:bg-transparent"
             >
