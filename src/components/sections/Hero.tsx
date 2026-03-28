@@ -70,91 +70,31 @@ export default function Hero({
 
         <div className="relative z-0 hidden md:block lg:col-span-5">
           <div className="relative flex aspect-square items-center justify-center">
-            <HeroPulseRings className="absolute inset-0 -z-10" />
-            <video
-              className="logo-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              width="1200"
-              height="1200"
-              aria-hidden="true"
-              disablePictureInPicture
-            >
-              <source
-                src="/animated-glowing-logo-hevc.mov"
-                type='video/quicktime; codecs="hvc1"'
-              />
-              <source
-                src="/animated-glowing-logo.webm"
-                type='video/webm; codecs="vp9"'
-              />
-            </video>
+            <div className="pointer-events-none absolute inset-0 -z-10 overflow-visible bg-black">
+              <video
+                className="absolute top-1/2 left-1/2 h-390 w-390 max-w-none -translate-x-1/2 -translate-y-1/2 bg-black object-contain"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster="/hero-animation-poster.png"
+                aria-hidden="true"
+                disablePictureInPicture
+              >
+                <source
+                  src="/hero-animation-safari.mov"
+                  type='video/quicktime; codecs="hvc1"'
+                />
+                <source
+                  src="/hero-animation.webm"
+                  type='video/webm; codecs="vp9"'
+                />
+              </video>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
-
-type HeroPulseRingsProps = {
-  className?: string
-}
-
-const pulseRings = [
-  { id: "ring-1", delay: "-30s" },
-  { id: "ring-2", delay: "-24s" },
-  { id: "ring-3", delay: "-18s" },
-  { id: "ring-4", delay: "-12s" },
-  { id: "ring-5", delay: "-6s" },
-  { id: "ring-6", delay: "0s" },
-] as const
-
-function HeroPulseRings({ className }: HeroPulseRingsProps) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 overflow-visible ${className ?? ""}`}
-    >
-      <style>{`
-        @keyframes hero-ring-pulse {
-          0% {
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 0;
-          }
-          12% {
-            opacity: 0.2;
-          }
-          100% {
-            transform: translate(-50%, -50%) scale(3);
-            opacity: 0;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .hero-ring {
-            animation: none !important;
-            opacity: 0 !important;
-          }
-        }
-      `}</style>
-
-      {pulseRings.map((ring) => (
-        <div
-          key={ring.id}
-          className="hero-ring absolute top-1/2 left-1/2 rounded-full"
-          style={{
-            width: "520px",
-            height: "520px",
-            border: "1px solid rgb(255, 255, 255)",
-            transform: "translate(-50%, -50%)",
-            animation: "hero-ring-pulse 36s linear infinite",
-            animationDelay: ring.delay,
-          }}
-        />
-      ))}
-    </div>
   )
 }
