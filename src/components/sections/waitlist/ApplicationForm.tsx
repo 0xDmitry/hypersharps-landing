@@ -61,6 +61,9 @@ function ApplicationField({
         htmlFor={inputId}
       >
         {field.label}
+        <span className="relative top-2 left-0.75 inline-block text-3xl">
+          *
+        </span>
       </label>
       {field.type === "textarea" ? (
         <textarea
