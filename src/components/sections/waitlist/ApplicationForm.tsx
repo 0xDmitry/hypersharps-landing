@@ -118,10 +118,10 @@ export default function ApplicationForm({
     setValues(getInitialApplicationValues(kind))
     setErrors({})
     setTouchedFields({})
-    setFeedback({
-      message: "",
+    setFeedback((prev) => ({
+      ...prev,
       status: "idle",
-    })
+    }))
   }, [kind])
 
   const isSubmitting = feedback.status === "submitting"
@@ -145,10 +145,10 @@ export default function ApplicationForm({
     }
 
     if (feedback.status !== "idle") {
-      setFeedback({
-        message: "",
+      setFeedback((prev) => ({
+        ...prev,
         status: "idle",
-      })
+      }))
     }
   }
 
@@ -182,10 +182,10 @@ export default function ApplicationForm({
       return
     }
 
-    setFeedback({
-      message: "",
+    setFeedback((prev) => ({
+      ...prev,
       status: "submitting",
-    })
+    }))
 
     try {
       const response = await fetch("/api/application", {
@@ -230,20 +230,7 @@ export default function ApplicationForm({
     <form
       className="space-y-6 p-6 pt-8 sm:p-8 md:p-16 md:pb-10"
       noValidate
-      onSubmit={(event) => {
-        setFeedback((prev) => {
-          event.preventDefault()
-          return prev.status === "error"
-            ? {
-                ...prev,
-                status: "idle",
-              }
-            : {
-                message: "XXXXXXXX",
-                status: "error",
-              }
-        })
-      }}
+      onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {fields.slice(0, 2).map((field) => (
