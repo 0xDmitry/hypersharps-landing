@@ -1,6 +1,5 @@
 import { useState } from "react"
-import { AnimatePresence, motion } from "motion/react"
-import { Minus, Plus } from "lucide-react"
+import { Minus, X } from "lucide-react"
 
 const faqItems = [
   {
@@ -75,22 +74,25 @@ function FAQItem({ question, answer }: FAQItemProps) {
         >
           {question}
         </h3>
-        <span className="text-primary transition-transform">
-          {isOpen ? <Minus /> : <Plus />}
+        <span
+          className={`text-primary transition-transform duration-300 ease-in-out ${
+            isOpen ? "rotate" : "-rotate-45"
+          }`}
+        >
+          {isOpen ? <Minus /> : <X />}
         </span>
       </div>
-      <AnimatePresence>
-        <motion.div
-          initial={false}
-          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-          className="overflow-hidden"
-          aria-hidden={!isOpen}
-        >
+      <div
+        className={`faq-answer ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+        data-open={isOpen}
+        aria-hidden={!isOpen}
+      >
+        <div className="faq-answer-content overflow-hidden">
           <p className="text-on-surface-variant mt-5 max-w-3xl text-base leading-relaxed font-light uppercase md:mt-6 md:text-lg">
             {answer}
           </p>
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      </div>
     </div>
   )
 }

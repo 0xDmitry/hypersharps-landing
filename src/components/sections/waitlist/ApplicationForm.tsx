@@ -9,7 +9,6 @@ import {
   type ApplicationKind,
   type ApplicationValues,
 } from "../../../lib/applicationForm"
-import { AnimatePresence, motion } from "motion/react"
 
 type ApplicationFormProps = {
   kind: ApplicationKind
@@ -25,13 +24,6 @@ type FeedbackState = {
 
 const inputClassName =
   "bg-background text-on-surface w-full border px-6 py-4 transition-all outline-none placeholder:text-white/40 focus:ring-0"
-
-const feedbackToneClassNames: Record<
-  Exclude<SubmissionStatus, "idle" | "submitting">,
-  string
-> = {
-  error: "border-red-500/20 bg-red-500/10 text-[#f96969]",
-}
 
 function ApplicationField({
   disabled,
@@ -133,6 +125,7 @@ export default function ApplicationForm({
   }, [kind])
 
   const isSubmitting = feedback.status === "submitting"
+  const shouldShowError = feedback.status === "error"
   const isValidationError = Object.values(errors).some(
     (value) => value !== null,
   )
@@ -235,9 +228,22 @@ export default function ApplicationForm({
 
   return (
     <form
-      className="space-y-6 p-6 pt-8 sm:p-8 md:p-16"
+      className="space-y-6 p-6 pt-8 sm:p-8 md:p-16 md:pb-10"
       noValidate
-      onSubmit={handleSubmit}
+      onSubmit={(event) => {
+        setFeedback((prev) => {
+          event.preventDefault()
+          return prev.status === "error"
+            ? {
+                ...prev,
+                status: "idle",
+              }
+            : {
+                message: "XXXXXXXX",
+                status: "error",
+              }
+        })
+      }}
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {fields.slice(0, 2).map((field) => (
@@ -272,23 +278,19 @@ export default function ApplicationForm({
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
-      <AnimatePresence>
-        {feedback.status !== "idle" && feedback.status !== "submitting" ? (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            role={feedback.status === "error" ? "alert" : "status"}
-            className={`flex items-center justify-center overflow-hidden border px-5 py-4 ${
-              feedbackToneClassNames[feedback.status]
-            }`}
-          >
-            <div className="text-center text-sm leading-relaxed whitespace-pre-line uppercase">
-              {feedback.message}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      <div
+        className={`form-error grid overflow-hidden ${
+          shouldShowError
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+        data-open={shouldShowError}
+        aria-hidden={!shouldShowError}
+      >
+        <div className="form-error-content flex items-center justify-center overflow-hidden border border-red-500/20 bg-red-500/10 px-5 py-4 text-sm leading-relaxed whitespace-pre-line text-[#f96969] uppercase">
+          {feedback.message}
+        </div>
+      </div>
     </form>
   )
 }

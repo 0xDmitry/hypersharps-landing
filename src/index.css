@@ -54,6 +54,45 @@
   box-shadow: 0 0 30px rgba(174, 230, 61, 0.15);
 }
 
+.faq-answer {
+  display: grid;
+  transition:
+    grid-template-rows 300ms ease-in-out,
+    opacity 300ms ease-in-out;
+}
+
+.faq-answer-content {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.faq-answer[data-open="true"] .faq-answer-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-error {
+  transition:
+    grid-template-rows 300ms ease-in-out,
+    opacity 300ms ease-in-out;
+}
+
+.form-error-content {
+  transform: translateY(-4px) scale(0.99);
+  opacity: 0;
+  transition:
+    opacity 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.form-error[data-open="true"] .form-error-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
 .data-signal {
   position: relative;
   width: 100%;
