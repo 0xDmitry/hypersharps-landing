@@ -7,7 +7,7 @@ import {
   parseApplicationPayload,
   type ApplicationKind,
   type ApplicationValues,
-} from "../src/lib/applicationForm"
+} from "../src/lib/applicationForm.js"
 
 type RequestLike = IncomingMessage & {
   body?: unknown
