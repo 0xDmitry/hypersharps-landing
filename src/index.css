@@ -134,15 +134,33 @@
   }
 
   .faq-item::details-content {
-    height: 0;
+    max-height: 0;
     overflow: clip;
     transition:
-      height 300ms ease,
+      max-height 300ms ease,
       content-visibility 300ms ease allow-discrete;
   }
 
   .faq-item[open]::details-content {
-    height: auto;
+    max-height: 300px;
+  }
+
+  @media (min-width: 640px) {
+    .faq-item[open]::details-content {
+      max-height: 150px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .faq-item[open]::details-content {
+      max-height: 160px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .faq-item[open]::details-content {
+      max-height: 140px;
+    }
   }
 }
 
