@@ -16,8 +16,8 @@ export default function Hero({
           </h1>
 
           <p className="text-on-surface-variant mb-12 max-w-xl text-xl leading-tight font-light uppercase md:text-2xl">
-            HyperSharps connects top prediction market traders with retail
-            traders seeking proven edge
+            The allocation and discovery layer for prediction market talent.
+            Sharps scale with aligned capital. Allocators back real edge.
           </p>
 
           {isApplicationSubmitted && (

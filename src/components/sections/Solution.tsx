@@ -3,21 +3,21 @@ import { Activity, Shield, Zap } from "lucide-react"
 const features = [
   {
     icon: <Shield className="h-8 w-8" />,
-    label: "Trustless by Design",
-    title: "Capital can only follow execution",
-    desc: "Allocators don’t hand over control blindly. By design, Sharps can only deploy capital through onchain prediction market trades — not withdraw, redirect, or misuse it.",
+    label: "Trustless Execution",
+    title: "Capital is constrained by design",
+    desc: "Allocators do not hand over blind control. By design, Sharps can deploy capital only through prediction market execution — not withdraw it, redirect it, or repurpose it.",
   },
   {
     icon: <Activity className="h-8 w-8" />,
-    label: "Discover Real Talent",
-    title: "Delegate to the best",
-    desc: "HyperSharps is built to identify traders with real, repeatable edge — not just visible wins, lucky streaks, or attention.",
+    label: "Legible Talent",
+    title: "Profiles built around real edge",
+    desc: "HyperSharps is built to surface traders with repeatable judgment, clear specialization, and performance that can actually be understood.",
   },
   {
     icon: <Zap className="h-8 w-8" />,
-    label: "Move Beyond Noise",
-    title: "Better than blind following",
-    desc: "HyperSharps replaces wallet mirroring, scattered signals, and reactive behavior with a structured and direct access to high quality decision making.",
+    label: "Cleaner Allocation",
+    title: "A better way to follow Sharps",
+    desc: "No wallet mirroring. No group-chat chasing. No random signals. Just structured access to proven judgment in prediction markets.",
   },
 ]
 

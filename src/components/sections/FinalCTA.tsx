@@ -12,8 +12,9 @@ export default function FinalCTA({
       <div className="bg-primary/5 absolute inset-0 blur-[150px]"></div>
       <div className="relative z-10 mx-auto max-w-5xl">
         <h2 className="font-headline mb-10 text-4xl leading-[0.9] font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-16 md:text-8xl">
-          The future of predictions is{" "}
-          <span className="text-primary italic">capitalized intelligence</span>
+          Prediction Markets Need
+          <br />
+          A <span className="text-primary italic">Better Capital Layer</span>
         </h2>
         {!isApplicationSubmitted && (
           <div className="flex flex-col justify-center gap-6 sm:flex-row">

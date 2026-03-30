@@ -4,20 +4,20 @@ const problems = [
   {
     icon: <EyeOff className="h-8 w-8" />,
     label: "Hidden Talent",
-    title: "Great traders are hard to identify",
-    desc: "Performance is fragmented across wallets, markets, and timelines. Signal is buried in noise, making it difficult to separate true skill from luck.",
+    title: "Real edge is hard to recognize",
+    desc: "Performance is fragmented across wallets, markets, and timelines. It is hard to separate repeatable judgment from variance, visibility, or luck.",
   },
   {
     icon: <TrendingDown className="h-8 w-8" />,
-    label: "Inefficient Allocation",
-    title: "Capital follows misleading signals",
-    desc: "Copy trading bots, Discord alpha, and wallet tracking are crude and reactive. There’s no structured way to allocate capital to proven edge.",
+    label: "Bad Routing",
+    title: "Capital follows noise",
+    desc: "Wallet tracking, Discord signals, and copy trading are reactive by nature. They surface motion, not real edge.",
   },
   {
     icon: <Landmark className="h-8 w-8" />,
-    label: "Funds Don’t Fit",
-    title: "Existing models are rigid and opaque",
-    desc: "Fixed timelines and fund structures move capital, but don’t surface skill. The system optimizes for vehicles and fees — not for discovering real edge.",
+    label: "Fund Structures",
+    title: "Fund structures don’t solve the problem",
+    desc: "They can pool capital, but they do not make real edge legible. The bottleneck is discovery, alignment, and cleaner execution.",
   },
 ]
 
@@ -30,9 +30,9 @@ export default function Problem() {
             01. The Problem
           </span>
           <h2 className="font-headline text-5xl leading-[0.9] font-bold tracking-tight uppercase md:text-7xl">
-            Sharps Have Edge
+            Real Edge Exists
             <br />
-            Retail Don&apos;t
+            Discovery Fails
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-px bg-white/5 md:grid-cols-2 lg:grid-cols-3">
