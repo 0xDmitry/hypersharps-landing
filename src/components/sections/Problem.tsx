@@ -4,20 +4,20 @@ const problems = [
   {
     icon: <EyeOff className="h-8 w-8" />,
     label: "Hidden Talent",
-    title: "Real edge is hard to recognize",
-    desc: "Performance is fragmented across wallets, markets, and timelines. It is hard to separate repeatable judgment from variance, visibility, or luck.",
+    title: "Skill is hard to recognize",
+    desc: "Performance is scattered across wallets, markets, and timelines. It is hard to separate actual skill from variance and hype.",
   },
   {
     icon: <TrendingDown className="h-8 w-8" />,
-    label: "Bad Routing",
+    label: "Weak Signals",
     title: "Capital follows noise",
-    desc: "Wallet tracking, Discord signals, and copy trading are reactive by nature. They surface motion, not real edge.",
+    desc: "Copy trading bots, whale trackers, and insider detector tools don’t reveal real edge. They amplify noise.",
   },
   {
     icon: <Landmark className="h-8 w-8" />,
     label: "Fund Structures",
-    title: "Fund structures don’t solve the problem",
-    desc: "They can pool capital, but they do not make real edge legible. The bottleneck is discovery, alignment, and cleaner execution.",
+    title: "Funds don’t solve the problem",
+    desc: "They can pool capital, but they do not make real edge legible. The real bottleneck is discovery, alignment, and execution.",
   },
 ]
 

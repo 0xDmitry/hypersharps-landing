@@ -4,20 +4,20 @@ const features = [
   {
     icon: <Shield className="h-8 w-8" />,
     label: "Trustless Execution",
-    title: "Capital is constrained by design",
-    desc: "Allocators do not hand over blind control. By design, Sharps can deploy capital only through prediction market execution — not withdraw it, redirect it, or repurpose it.",
+    title: "Capital stays on rails",
+    desc: "By design, Sharps can use capital only for prediction market trading — not withdraw it, redirect it, or repurpose it.",
   },
   {
     icon: <Activity className="h-8 w-8" />,
     label: "Legible Talent",
     title: "Profiles built around real edge",
-    desc: "HyperSharps is built to surface traders with repeatable judgment, clear specialization, and performance that can actually be understood.",
+    desc: "HyperSharps is built to discover traders with repeatable judgment, clear specialization, and legible performance.",
   },
   {
     icon: <Zap className="h-8 w-8" />,
-    label: "Cleaner Allocation",
-    title: "A better way to follow Sharps",
-    desc: "No wallet mirroring. No group-chat chasing. No random signals. Just structured access to proven judgment in prediction markets.",
+    label: "Clean Allocation",
+    title: "A better way to access Sharps",
+    desc: "No wallet mirroring. No alpha chasing. No conflicting signals. Just structured access to proven judgment in prediction markets.",
   },
 ]
 
@@ -30,7 +30,7 @@ export default function Solution() {
             02. The Solution
           </span>
           <h2 className="font-headline text-5xl leading-[0.9] font-bold tracking-tight uppercase md:text-7xl">
-            Follow Decisions
+            Access Sharps
             <br />
             Not Noise
           </h2>

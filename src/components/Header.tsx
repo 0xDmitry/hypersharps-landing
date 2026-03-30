@@ -18,7 +18,7 @@ export default function Header({ isApplicationSubmitted }: HeaderProps) {
         </a>
         {!isApplicationSubmitted && (
           <a
-            href="#waitlist"
+            href="#get-early-access"
             className="bg-primary text-on-primary font-headline hidden px-6 py-2.5 text-sm font-bold tracking-wider uppercase transition-all hover:brightness-110 md:inline-block"
           >
             Get Early Access

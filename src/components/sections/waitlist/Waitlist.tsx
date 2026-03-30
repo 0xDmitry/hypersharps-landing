@@ -28,8 +28,8 @@ export default function Waitlist({
 
   return (
     <section
-      className="bg-background px-6 py-10 sm:py-22 md:py-26 lg:py-32"
-      id="waitlist"
+      className="bg-background mx-auto px-6 py-10 sm:py-22 md:py-26 lg:py-32"
+      id="get-early-access"
       ref={successFeedbackRef}
     >
       {isApplicationSubmitted ? (
@@ -41,8 +41,8 @@ export default function Waitlist({
               Get Early Access
             </h2>
             <p className="text-on-surface-variant mx-auto max-w-3xl text-base font-light tracking-[0.12em] uppercase sm:text-lg sm:tracking-[0.18em] md:text-xl">
-              Apply as a Sharp to scale your edge. Join as an allocator to back
-              proven prediction market talent.
+              Apply as a Sharp to scale your edge or Join as an allocator to
+              back proven prediction market talent
             </p>
           </div>
           <div className="bg-surface border border-white/10">

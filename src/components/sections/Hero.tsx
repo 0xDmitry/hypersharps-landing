@@ -16,8 +16,8 @@ export default function Hero({
           </h1>
 
           <p className="text-on-surface-variant mb-12 max-w-xl text-xl leading-tight font-light uppercase md:text-2xl">
-            The allocation and discovery layer for prediction market talent.
-            Sharps scale with aligned capital. Allocators back real edge.
+            HyperSharps is the capital layer for prediction market talent.
+            Discover Sharps. Back real edge. Scale with aligned capital.
           </p>
 
           {isApplicationSubmitted && (
@@ -39,7 +39,7 @@ export default function Hero({
             }`}
           >
             <a
-              href="#waitlist"
+              href="#get-early-access"
               onClick={() => onSelectWaitlistTab("sharp")}
               className="bg-primary text-on-primary font-headline kinetic-glow px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all hover:brightness-110"
             >
@@ -47,7 +47,7 @@ export default function Hero({
             </a>
 
             <a
-              href="#waitlist"
+              href="#get-early-access"
               onClick={() => onSelectWaitlistTab("allocator")}
               className="bg-surface text-secondary font-headline hover:bg-surface px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all lg:bg-black"
             >

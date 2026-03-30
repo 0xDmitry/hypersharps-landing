@@ -3,8 +3,8 @@ import { Banknote, TrendingUp } from "lucide-react"
 const sharpSteps = [
   {
     num: "01",
-    title: "Apply and show your track record",
-    desc: "Share your profile, market focus, and specialization. We look for consistency, judgment, and repeatable edge — not just big headline numbers.",
+    title: "Apply with your track record",
+    desc: "Share your profile, market focus, and specialization. We look for consistency, judgment, and repeatable edge — not just headline numbers.",
   },
   {
     num: "02",
@@ -14,7 +14,7 @@ const sharpSteps = [
   {
     num: "03",
     title: "Scale with aligned capital",
-    desc: "Get discovered by allocators looking for real prediction market talent and turn performance into scalable opportunity.",
+    desc: "Get discovered by allocators looking for real prediction market talent and turn proven performance into scalable opportunity.",
   },
 ]
 
@@ -22,17 +22,17 @@ const allocatorSteps = [
   {
     num: "01",
     title: "Join early access",
-    desc: "Apply as an individual, DAO, protocol, or treasury seeking exposure to top prediction market talent.",
+    desc: "Apply as an individual, DAO, protocol, or treasury seeking exposure to proven prediction market talent.",
   },
   {
     num: "02",
     title: "Browse selected Sharps",
-    desc: "Access curated trader profiles built around edge, market focus, and performance — not hype or wallet noise.",
+    desc: "Access curated trader profiles built around edge, market focus, and performance — not hype, noise, or random signals.",
   },
   {
     num: "03",
-    title: "Allocate with more clarity",
-    desc: "Back Sharps whose judgment, style, and risk profile fit your own goals and conviction.",
+    title: "Allocate with clarity",
+    desc: "Allocate to Sharps whose judgment, style, and risk profile match your goals and conviction.",
   },
 ]
 

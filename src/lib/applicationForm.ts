@@ -93,7 +93,7 @@ export const APPLICATION_FIELDS = {
     {
       name: "allocationType",
       label: "Allocator type",
-      placeholder: "Individual / DAO / Protocol / Treasury / Family Office",
+      placeholder: "Individual / DAO / Protocol / Treasury / Other",
       type: "text",
       autoComplete: "off",
     },

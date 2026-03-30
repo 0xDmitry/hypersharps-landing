@@ -14,7 +14,7 @@ export default function Footer({ isApplicationSubmitted }: FooterProps) {
             <LogoIcon className="h-8 w-8" />
             HyperSharps
           </div>
-          <p className="text-on-surface-variant max-w-sm text-sm uppercase">
+          <p className="text-on-surface-variant max-w-xs text-sm uppercase">
             The allocation and discovery layer for prediction market talent
           </p>
         </div>
