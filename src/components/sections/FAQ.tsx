@@ -75,7 +75,10 @@ function FAQItem({ question, answer }: FAQItemProps) {
         >
           {question}
         </h3>
-        <span
+        <span className="text-primary transition-transform">
+          {isOpen ? <Minus /> : <Plus />}
+        </span>
+        {/* <span
           className={`text-primary faq-icon shrink-0 ${isOpen && "faq-item-opened"}`}
         >
           <span className="faq-icon-plus">
@@ -84,7 +87,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
           <span className="faq-icon-minus">
             <Minus />
           </span>
-        </span>
+        </span> */}
       </div>
       <AnimatePresence>
         <motion.div
