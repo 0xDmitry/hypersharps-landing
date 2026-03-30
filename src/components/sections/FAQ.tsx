@@ -75,10 +75,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
         >
           {question}
         </h3>
-        <span className="text-primary transition-transform">
-          {isOpen ? <Minus /> : <Plus />}
-        </span>
-        {/* <span
+        <span
           className={`text-primary faq-icon shrink-0 ${isOpen && "faq-item-opened"}`}
         >
           <span className="faq-icon-plus">
@@ -87,14 +84,15 @@ function FAQItem({ question, answer }: FAQItemProps) {
           <span className="faq-icon-minus">
             <Minus />
           </span>
-        </span> */}
+        </span>
       </div>
       <AnimatePresence>
         <motion.div
           initial={false}
-          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+          animate={{ maxHeight: isOpen ? "300px" : 0, opacity: isOpen ? 1 : 0 }}
           className="overflow-hidden"
           aria-hidden={!isOpen}
+          style={{ willChange: "max-height, opacity" }}
         >
           <p className="text-on-surface-variant mt-5 max-w-3xl text-base leading-relaxed font-light uppercase md:mt-6 md:text-lg">
             {answer}
