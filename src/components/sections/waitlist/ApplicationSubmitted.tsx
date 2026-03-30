@@ -15,7 +15,7 @@ export default function ApplicationSubmitted({
         </h2>
         <p className="text-on-surface-variant mx-auto mb-8 max-w-2xl text-base font-light tracking-[0.12em] uppercase sm:text-lg sm:tracking-[0.18em] md:text-xl">
           {activeTab === "sharp"
-            ? "We’ll review your application and reach out if there’s a fit"
+            ? "We’ll review your application and reach out"
             : "We’ll let you know when early access opens"}
         </p>
         <a
