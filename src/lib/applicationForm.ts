@@ -19,28 +19,28 @@ export const APPLICATION_FIELDS = {
     {
       name: "name",
       label: "Name",
-      placeholder: "Full Name / Handle",
+      placeholder: "Full name or handle",
       type: "text",
       autoComplete: "name",
     },
     {
       name: "email",
       label: "Email",
-      placeholder: "example@email.com",
+      placeholder: "you@example.com",
       type: "email",
       autoComplete: "email",
     },
     {
       name: "xProfile",
       label: "X profile",
-      placeholder: "Username",
+      placeholder: "@username",
       type: "text",
       autoComplete: "off",
     },
     {
       name: "contactHandle",
       label: "Discord or Telegram",
-      placeholder: "Username",
+      placeholder: "@handle",
       type: "text",
       autoComplete: "off",
     },
@@ -54,7 +54,8 @@ export const APPLICATION_FIELDS = {
     {
       name: "edge",
       label: "Describe your edge",
-      placeholder: "Brief description of trading edge / market focus",
+      placeholder:
+        "What is your edge in prediction markets? What do you trade better than most?",
       type: "textarea",
       rows: 5,
       autoComplete: "off",
@@ -64,35 +65,35 @@ export const APPLICATION_FIELDS = {
     {
       name: "name",
       label: "Name",
-      placeholder: "Full Name / Handle",
+      placeholder: "Full name or handle",
       type: "text",
       autoComplete: "name",
     },
     {
       name: "email",
       label: "Email",
-      placeholder: "example@email.com",
+      placeholder: "you@example.com",
       type: "email",
       autoComplete: "email",
     },
     {
       name: "xProfile",
       label: "X profile",
-      placeholder: "Username",
+      placeholder: "@username",
       type: "text",
       autoComplete: "off",
     },
     {
       name: "contactHandle",
       label: "Discord or Telegram",
-      placeholder: "Username",
+      placeholder: "@handle",
       type: "text",
       autoComplete: "off",
     },
     {
       name: "allocationType",
-      label: "Type of allocation",
-      placeholder: "Individual / DAO / Protocol / Prop Firm",
+      label: "Allocator type",
+      placeholder: "Individual / DAO / Protocol / Treasury / Family Office",
       type: "text",
       autoComplete: "off",
     },
@@ -126,7 +127,6 @@ function normalizeValue(value: unknown) {
 function isValidPolymarketProfileUrl(value: string) {
   try {
     const url = new URL(value)
-    console.log("polymarket url", url)
     return (
       url.protocol === "https:" &&
       url.host === "polymarket.com" &&
@@ -165,8 +165,8 @@ export function validateApplicationField(
 
   const normalizedValue = normalizeValue(value)
 
-  if (!normalizedValue && field.type === "textarea") {
-    return "Description is required"
+  if (!normalizedValue && field.name === "edge") {
+    return "Tell us about your edge"
   }
 
   if (!normalizedValue) {

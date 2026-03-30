@@ -15,8 +15,7 @@ export default function Footer({ isApplicationSubmitted }: FooterProps) {
             HyperSharps
           </div>
           <p className="text-on-surface-variant max-w-sm text-sm uppercase">
-            Permissionless prediction markets infrastructure for the next
-            generation of truth seekers
+            The allocation and discovery layer for prediction market talent
           </p>
         </div>
         <div className="flex flex-col gap-6 sm:gap-10 md:flex-row md:justify-end lg:gap-16">

@@ -263,7 +263,11 @@ export default function ApplicationForm({
         disabled={isSubmitting || isValidationError}
         type="submit"
       >
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting
+    ? "Submitting..."
+    : kind === "sharp"
+      ? "Apply"
+      : "Join"}
       </button>
       <div
         className={`form-error ${isError ? "is-open" : ""}`}

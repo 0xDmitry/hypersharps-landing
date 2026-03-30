@@ -4,32 +4,32 @@ const faqItems = [
   {
     question: "What is HyperSharps?",
     answer:
-      "HyperSharps is the allocation layer for prediction markets - built to help capital discover and access real edge.",
+      "HyperSharps is the allocation and discovery layer for prediction market talent. It helps Sharps scale with aligned capital and gives allocators a cleaner way to back real edge.",
   },
   {
     question: "Who is HyperSharps for?",
     answer:
-      "HyperSharps is built for two groups: traders with exceptional skill who want to scale their edge and allocators who want a better way to discover and back proven talent.",
+      "HyperSharps is built for two groups: Sharps with real prediction market edge who want to scale, and allocators who want a better way to discover and back proven talent.",
   },
   {
     question: "Is this copy trading?",
     answer:
-      "No. HyperSharps is not built around blindly mirroring wallets or following trades in real time. Allocators discover traders based on their demonstrated edge, style, and performance. Then they delegate decision making to them.",
+      "No. HyperSharps is not built around blindly mirroring wallets or chasing trades in real time. It is built around discovering skilled traders, understanding their edge, and delegating execution in a more structured way.",
   },
   {
     question: "Is this a fund?",
     answer:
-      "No. HyperSharps is not a fund. It is a permissionless platform for discovering, evaluating, and scaling forecasting talent.",
+      "No. HyperSharps is not a fund wrapper. It is an onchain coordination layer for discovering, evaluating, and backing prediction market talent.",
   },
   {
     question: "How are Sharps selected?",
     answer:
-      "Sharps are selected based on the quality and consistency of their track record. Our goal is not to surface the loudest traders, but to identify those with clear, repeatable edge.",
+      "Sharps are selected based on quality of judgment, consistency, and track record. The goal is not to surface the loudest accounts, but the most legible and repeatable edge.",
   },
   {
     question: "When does access open?",
     answer:
-      "HyperSharps is currently onboarding early participants through the waitlist. Access will open in phases, with priority given to the strongest Sharps and earliest allocators.",
+      "HyperSharps is onboarding early participants now. Access will open in stages, with priority given to strong Sharps and early allocators.",
   },
 ]
 

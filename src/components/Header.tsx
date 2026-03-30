@@ -21,7 +21,7 @@ export default function Header({ isApplicationSubmitted }: HeaderProps) {
             href="#waitlist"
             className="bg-primary text-on-primary font-headline hidden px-6 py-2.5 text-sm font-bold tracking-wider uppercase transition-all hover:brightness-110 md:inline-block"
           >
-            Request Access
+            Get Early Access
           </a>
         )}
       </div>

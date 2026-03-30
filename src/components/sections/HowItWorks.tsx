@@ -3,36 +3,36 @@ import { Banknote, TrendingUp } from "lucide-react"
 const sharpSteps = [
   {
     num: "01",
-    title: "Apply and prove your edge",
-    desc: "Submit your profile, trading background, and track record. We review performance, market focus, and consistency to identify high-signal traders.",
+    title: "Apply and show your track record",
+    desc: "Share your profile, market focus, and specialization. We look for consistency, judgment, and repeatable edge — not just big headline numbers.",
   },
   {
     num: "02",
-    title: "Build your Sharp profile",
-    desc: "Create a clear profile around your edge — including specialty, style, and performance history — so allocators can understand how you win.",
+    title: "Build a legible Sharp profile",
+    desc: "Create a clear profile around your edge, style, and performance so allocators can understand how you win.",
   },
   {
     num: "03",
     title: "Scale with aligned capital",
-    desc: "Get discovered by selected allocators looking for proven talent. HyperSharps helps strong traders turn performance into access to capital.",
+    desc: "Get discovered by allocators looking for real prediction market talent and turn performance into scalable opportunity.",
   },
 ]
 
 const allocatorSteps = [
   {
     num: "01",
-    title: "Join the allocator waitlist",
-    desc: "Apply for early access as an individual, DAO, or protocol seeking exposure to top prediction market talent.",
+    title: "Join early access",
+    desc: "Apply as an individual, DAO, protocol, or treasury seeking exposure to top prediction market talent.",
   },
   {
     num: "02",
-    title: "Discover curated Sharps",
-    desc: "Access selected trader profiles built around performance, style, and market focus — not noise, hype, or random wallet following.",
+    title: "Browse selected Sharps",
+    desc: "Access curated trader profiles built around edge, market focus, and performance — not hype or wallet noise.",
   },
   {
     num: "03",
-    title: "Back proven judgment",
-    desc: "Evaluate traders with greater clarity and allocate to Sharps whose edge fits your goals, risk appetite, and conviction.",
+    title: "Allocate with more clarity",
+    desc: "Back Sharps whose judgment, style, and risk profile fit your own goals and conviction.",
   },
 ]
 
