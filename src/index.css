@@ -135,6 +135,7 @@
 
   .faq-item::details-content {
     max-height: 0;
+    will-change: max-height, content-visibility;
     overflow: clip;
     transition:
       max-height 300ms ease,
@@ -163,22 +164,6 @@
     }
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .faq-question,
-  .faq-icon-plus,
-  .faq-icon-minus,
-  .faq-panel-text {
-    transition: none;
-  }
-
-  @supports selector(::details-content) and (interpolate-size: allow-keywords) {
-    .faq-item::details-content {
-      transition: none;
-    }
-  }
-}
-
 .form-error {
   overflow: hidden;
   max-height: 0;
