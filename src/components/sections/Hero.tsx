@@ -68,9 +68,12 @@ export default function Hero({
           )}
         </div>
 
-        <div className="relative z-0 hidden md:block lg:col-span-5">
-          <div className="relative flex aspect-square items-center justify-center">
-            <div className="pointer-events-none absolute inset-0 -z-10 overflow-visible bg-black">
+        <div className="relative z-0 hidden bg-black md:block lg:col-span-5">
+          <div className="relative flex aspect-square items-center justify-center bg-black">
+            <div
+              aria-hidden="true"
+              className="absolute top-1/2 left-1/2 h-390 w-390 max-w-none -translate-x-1/2 -translate-y-1/2 bg-black"
+            >
               <video
                 className="absolute top-1/2 left-1/2 h-390 w-390 max-w-none -translate-x-1/2 -translate-y-1/2 bg-black object-contain"
                 autoPlay
@@ -79,17 +82,8 @@ export default function Hero({
                 playsInline
                 preload="auto"
                 poster="/hero-animation-poster.png"
-                aria-hidden="true"
-                disablePictureInPicture
               >
-                <source
-                  src="/hero-animation-safari.mov"
-                  type='video/quicktime; codecs="hvc1"'
-                />
-                <source
-                  src="/hero-animation.webm"
-                  type='video/webm; codecs="vp9"'
-                />
+                <source src="/hero-animation.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
