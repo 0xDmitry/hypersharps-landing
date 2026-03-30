@@ -126,10 +126,10 @@ export default function ApplicationForm({
     setValues(getInitialApplicationValues(kind))
     setErrors(getInitialApplicationFieldErrors(kind))
     setTouchedFields(getInitialApplicationTouchedFields(kind))
-    setFeedback((prev) => ({
-      ...prev,
+    setFeedback({
+      message: "",
       status: "idle",
-    }))
+    })
   }, [kind])
 
   const isSubmitting = feedback.status === "submitting"
@@ -147,13 +147,6 @@ export default function ApplicationForm({
       setErrors((currentErrors) => ({
         ...currentErrors,
         [fieldName]: validateApplicationField(kind, fieldName, nextValue),
-      }))
-    }
-
-    if (feedback.status !== "idle") {
-      setFeedback((prev) => ({
-        ...prev,
-        status: "idle",
       }))
     }
   }
@@ -191,10 +184,10 @@ export default function ApplicationForm({
       }, {}),
     )
 
-    setFeedback((prev) => ({
-      ...prev,
+    setFeedback({
+      message: "",
       status: "submitting",
-    }))
+    })
 
     try {
       const response = await fetch("/api/application", {
