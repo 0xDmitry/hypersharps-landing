@@ -236,19 +236,19 @@
   );
   filter: blur(5px);
   pointer-events: none;
-  animation: data-signal-pass 3s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation: data-signal-pass 3s linear infinite;
 }
 
 @keyframes data-signal-pass {
   0% {
-    left: 7%;
+    left: 0%;
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    left: 75%;
+    left: 82%;
     opacity: 0;
   }
 }
