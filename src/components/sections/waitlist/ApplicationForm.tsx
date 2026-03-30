@@ -125,7 +125,7 @@ export default function ApplicationForm({
   }, [kind])
 
   const isSubmitting = feedback.status === "submitting"
-  const shouldShowError = feedback.status === "error"
+  const isError = feedback.status === "error"
   const isValidationError = Object.values(errors).some(
     (value) => value !== null,
   )
@@ -266,15 +266,11 @@ export default function ApplicationForm({
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
       <div
-        className={`form-error grid overflow-hidden ${
-          shouldShowError
-            ? "grid-rows-[1fr] opacity-100"
-            : "grid-rows-[0fr] opacity-0"
-        }`}
-        data-open={shouldShowError}
-        aria-hidden={!shouldShowError}
+        className={`form-error ${isError ? "is-open" : ""}`}
+        data-open={isError}
+        aria-hidden={!isError}
       >
-        <div className="form-error-content flex items-center justify-center overflow-hidden border border-red-500/20 bg-red-500/10 px-5 py-4 text-sm leading-relaxed whitespace-pre-line text-[#f96969] uppercase">
+        <div className="form-error-content border border-red-500/20 bg-red-500/10 px-5 py-4 text-sm leading-relaxed whitespace-pre-line text-[#f96969] uppercase">
           {feedback.message}
         </div>
       </div>

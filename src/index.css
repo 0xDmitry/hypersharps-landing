@@ -161,17 +161,41 @@
   }
 }
 
+.form-error {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 300ms ease,
+    opacity 220ms ease;
+}
+
+.form-error.is-open {
+  max-height: 160px;
+  opacity: 1;
+}
+
 .form-error-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: translateY(-4px) scale(0.99);
   opacity: 0;
   transition:
-    opacity 300ms ease-in-out,
-    transform 300ms ease-in-out;
+    opacity 200ms ease-out,
+    transform 200ms ease-out;
 }
 
-.form-error[data-open="true"] .form-error-content {
+.form-error.is-open .form-error-content {
   transform: translateY(0) scale(1);
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-error,
+  .form-error-content {
+    transition: none;
+  }
 }
 
 .data-signal {
