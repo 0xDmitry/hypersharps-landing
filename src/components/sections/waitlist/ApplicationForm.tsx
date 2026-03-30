@@ -191,10 +191,6 @@ export default function ApplicationForm({
       }, {}),
     )
 
-    if (!validation.isValid) {
-      return
-    }
-
     setFeedback((prev) => ({
       ...prev,
       status: "submitting",

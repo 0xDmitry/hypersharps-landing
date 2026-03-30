@@ -225,7 +225,7 @@ export function validateApplicationValues(
 
   return {
     errors,
-    isValid: Object.keys(errors).length === 0,
+    isValid: Object.values(errors).filter((value) => value !== "").length === 0,
     normalizedValues,
   }
 }
