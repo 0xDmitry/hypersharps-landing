@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, FocusEvent } from "react"
 import {
   APPLICATION_FIELDS,
   validateApplicationField,
   validateApplicationValues,
   getInitialApplicationValues,
+  getInitialApplicationFieldErrors,
+  getInitialApplicationTouchedFields,
   type ApplicationFieldDefinition,
   type ApplicationFieldErrors,
+  type ApplicationTouchedFields,
   type ApplicationKind,
   type ApplicationValues,
 } from "../../../lib/applicationForm"
@@ -38,7 +41,10 @@ function ApplicationField({
   error?: string
   field: ApplicationFieldDefinition
   kind: ApplicationKind
-  onBlur: (fieldName: string) => void
+  onBlur: (
+    event: FocusEvent<HTMLTextAreaElement | HTMLInputElement, Element>,
+    fieldName: string,
+  ) => void
   onChange: (fieldName: string, value: string) => void
   value: string
 }) {
@@ -65,7 +71,7 @@ function ApplicationField({
           className={className}
           disabled={disabled}
           id={inputId}
-          onBlur={() => onBlur(field.name)}
+          onBlur={(event) => onBlur(event, field.name)}
           onChange={(event) => onChange(field.name, event.target.value)}
           placeholder={field.placeholder}
           required
@@ -80,7 +86,7 @@ function ApplicationField({
           className={className}
           disabled={disabled}
           id={inputId}
-          onBlur={() => onBlur(field.name)}
+          onBlur={(event) => onBlur(event, field.name)}
           onChange={(event) => onChange(field.name, event.target.value)}
           placeholder={field.placeholder}
           required
@@ -105,9 +111,11 @@ export default function ApplicationForm({
   const [values, setValues] = useState<ApplicationValues>(() =>
     getInitialApplicationValues(kind),
   )
-  const [errors, setErrors] = useState<ApplicationFieldErrors>({})
-  const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>(
-    {},
+  const [errors, setErrors] = useState<ApplicationFieldErrors>(
+    getInitialApplicationFieldErrors(kind),
+  )
+  const [touchedFields, setTouchedFields] = useState<ApplicationTouchedFields>(
+    getInitialApplicationTouchedFields(kind),
   )
   const [feedback, setFeedback] = useState<FeedbackState>({
     message: "",
@@ -116,8 +124,8 @@ export default function ApplicationForm({
 
   useEffect(() => {
     setValues(getInitialApplicationValues(kind))
-    setErrors({})
-    setTouchedFields({})
+    setErrors(getInitialApplicationFieldErrors(kind))
+    setTouchedFields(getInitialApplicationTouchedFields(kind))
     setFeedback((prev) => ({
       ...prev,
       status: "idle",
@@ -126,9 +134,7 @@ export default function ApplicationForm({
 
   const isSubmitting = feedback.status === "submitting"
   const isError = feedback.status === "error"
-  const isValidationError = Object.values(errors).some(
-    (value) => value !== null,
-  )
+  const isValidationError = Object.values(errors).some((value) => value !== "")
   const fields = APPLICATION_FIELDS[kind]
 
   const handleChange = (fieldName: string, nextValue: string) => {
@@ -152,7 +158,14 @@ export default function ApplicationForm({
     }
   }
 
-  const handleBlur = (fieldName: string) => {
+  const handleBlur = (
+    event: FocusEvent<HTMLTextAreaElement | HTMLInputElement, Element>,
+    fieldName: string,
+  ) => {
+    if (event.relatedTarget.id === "submitButton") {
+      return
+    }
+
     setTouchedFields((currentTouchedFields) => ({
       ...currentTouchedFields,
       [fieldName]: true,
@@ -205,7 +218,7 @@ export default function ApplicationForm({
       }
 
       if (!response.ok) {
-        setErrors(result.errors ?? {})
+        setErrors(result.errors ?? getInitialApplicationFieldErrors(kind))
         setFeedback({
           message:
             result.message || "Unable to submit the application right now",
@@ -215,8 +228,8 @@ export default function ApplicationForm({
       }
 
       setValues(getInitialApplicationValues(kind))
-      setErrors({})
-      setTouchedFields({})
+      setErrors(getInitialApplicationFieldErrors(kind))
+      setTouchedFields(getInitialApplicationTouchedFields(kind))
       onSuccessfullSubmit()
     } catch {
       setFeedback({
@@ -245,8 +258,20 @@ export default function ApplicationForm({
             value={values[field.name] ?? ""}
           />
         ))}
+        {fields.slice(2, 4).map((field) => (
+          <ApplicationField
+            disabled={isSubmitting}
+            error={errors[field.name]}
+            field={field}
+            key={field.name}
+            kind={kind}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value={values[field.name] ?? ""}
+          />
+        ))}
       </div>
-      {fields.slice(2).map((field) => (
+      {fields.slice(4).map((field) => (
         <ApplicationField
           disabled={isSubmitting}
           error={errors[field.name]}
@@ -259,15 +284,12 @@ export default function ApplicationForm({
         />
       ))}
       <button
+        id="submitButton"
         className="bg-primary text-on-primary font-headline kinetic-glow disabled:bg-on-surface-variant w-full cursor-pointer py-6 text-xl font-bold tracking-[0.2em] uppercase transition-all hover:brightness-110 disabled:cursor-not-allowed"
         disabled={isSubmitting || isValidationError}
         type="submit"
       >
-        {isSubmitting
-    ? "Submitting..."
-    : kind === "sharp"
-      ? "Apply"
-      : "Join"}
+        {isSubmitting ? "Submitting..." : kind === "sharp" ? "Apply" : "Join"}
       </button>
       <div
         className={`form-error ${isError ? "is-open" : ""}`}

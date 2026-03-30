@@ -107,6 +107,9 @@ export type ApplicationValues = Partial<Record<ApplicationFieldName, string>>
 export type ApplicationFieldErrors = Partial<
   Record<ApplicationFieldName, string>
 >
+export type ApplicationTouchedFields = Partial<
+  Record<ApplicationFieldName, boolean>
+>
 
 export type ApplicationValidationResult = {
   errors: ApplicationFieldErrors
@@ -152,6 +155,27 @@ export function getInitialApplicationValues(
   }, {})
 }
 
+export function getInitialApplicationFieldErrors(
+  kind: ApplicationKind,
+): ApplicationFieldErrors {
+  return APPLICATION_FIELDS[kind].reduce<ApplicationValues>((values, field) => {
+    values[field.name] = ""
+    return values
+  }, {})
+}
+
+export function getInitialApplicationTouchedFields(
+  kind: ApplicationKind,
+): ApplicationTouchedFields {
+  return APPLICATION_FIELDS[kind].reduce<ApplicationTouchedFields>(
+    (values, field) => {
+      values[field.name] = false
+      return values
+    },
+    {},
+  )
+}
+
 export function validateApplicationField(
   kind: ApplicationKind,
   fieldName: string,
@@ -160,7 +184,7 @@ export function validateApplicationField(
   const field = getFieldDefinition(kind, fieldName)
 
   if (!field) {
-    return null
+    return ""
   }
 
   const normalizedValue = normalizeValue(value)
@@ -181,25 +205,22 @@ export function validateApplicationField(
     return "Enter a valid Polymarket profile URL"
   }
 
-  return null
+  return ""
 }
 
 export function validateApplicationValues(
   kind: ApplicationKind,
   values: ApplicationValues,
 ): ApplicationValidationResult {
-  const errors: ApplicationFieldErrors = {}
-  const normalizedValues = getInitialApplicationValues(kind)
+  const errors: ApplicationFieldErrors = getInitialApplicationFieldErrors(kind)
+  const normalizedValues = { ...values }
 
   for (const field of APPLICATION_FIELDS[kind]) {
     const normalizedValue = normalizeValue(values[field.name])
     normalizedValues[field.name] = normalizedValue
 
     const error = validateApplicationField(kind, field.name, normalizedValue)
-
-    if (error) {
-      errors[field.name] = error
-    }
+    errors[field.name] = error
   }
 
   return {
