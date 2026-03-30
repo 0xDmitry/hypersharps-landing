@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.hypersharps.xyz/sitemap.xml
+Sitemap: https://hypersharps.xyz/sitemap.xml
