@@ -54,30 +54,111 @@
   box-shadow: 0 0 30px rgba(174, 230, 61, 0.15);
 }
 
-.faq-answer {
-  display: grid;
-  transition:
-    grid-template-rows 300ms ease-in-out,
-    opacity 300ms ease-in-out;
+.faq-item {
+  overflow: hidden;
 }
 
-.faq-answer-content {
+.faq-summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-summary::marker {
+  content: "";
+}
+
+.faq-question {
+  transition: color 220ms ease;
+}
+
+.faq-item:hover .faq-question,
+.faq-item[open] .faq-question {
+  color: var(--color-primary);
+}
+
+.faq-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.faq-icon-plus,
+.faq-icon-minus {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition: transform 220ms ease;
+}
+
+.faq-icon-plus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.faq-icon-minus {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.faq-item[open] .faq-icon-plus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.faq-item[open] .faq-icon-minus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.faq-panel-text {
   opacity: 0;
   transform: translateY(-6px);
   transition:
-    opacity 300ms ease-in-out,
-    transform 300ms ease-in-out;
+    opacity 200ms ease-out,
+    transform 200ms ease-out;
 }
 
-.faq-answer[data-open="true"] .faq-answer-content {
+.faq-item[open] .faq-panel-text {
   opacity: 1;
   transform: translateY(0);
 }
 
-.form-error {
-  transition:
-    grid-template-rows 300ms ease-in-out,
-    opacity 300ms ease-in-out;
+@supports selector(::details-content) and (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  .faq-item::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 300ms ease,
+      content-visibility 300ms ease allow-discrete;
+  }
+
+  .faq-item[open]::details-content {
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-question,
+  .faq-icon-plus,
+  .faq-icon-minus,
+  .faq-panel-text {
+    transition: none;
+  }
+
+  @supports selector(::details-content) and (interpolate-size: allow-keywords) {
+    .faq-item::details-content {
+      transition: none;
+    }
+  }
 }
 
 .form-error-content {

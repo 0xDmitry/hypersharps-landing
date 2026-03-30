@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { Minus, X } from "lucide-react"
+import { Minus, Plus } from "lucide-react"
 
 const faqItems = [
   {
@@ -41,58 +40,40 @@ export default function FAQ() {
         <h2 className="font-headline mb-6 text-center text-4xl font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-14 md:text-6xl">
           FAQ
         </h2>
+
         <div className="space-y-px bg-white/5">
           {faqItems.map((item) => (
-            <FAQItem
+            <details
               key={item.question}
-              question={item.question}
-              answer={item.answer}
-            />
+              className="faq-item bg-background border border-white/5"
+            >
+              <summary className="faq-summary flex items-center justify-between px-8 py-8 sm:py-10 md:px-10">
+                <h3 className="faq-question font-headline pr-6 text-2xl font-bold tracking-tight uppercase md:text-[2rem]">
+                  {item.question}
+                </h3>
+
+                <span
+                  className="faq-icon text-primary shrink-0"
+                  aria-hidden="true"
+                >
+                  <span className="faq-icon-plus">
+                    <Plus />
+                  </span>
+                  <span className="faq-icon-minus">
+                    <Minus />
+                  </span>
+                </span>
+              </summary>
+
+              <div className="faq-panel px-8 pb-8 sm:pb-10 md:px-10">
+                <p className="faq-panel-text text-on-surface-variant max-w-3xl text-base leading-relaxed font-light uppercase md:text-lg">
+                  {item.answer}
+                </p>
+              </div>
+            </details>
           ))}
         </div>
       </div>
     </section>
-  )
-}
-
-type FAQItemProps = {
-  question: string
-  answer: string
-}
-
-function FAQItem({ question, answer }: FAQItemProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <div
-      className="bg-background group cursor-pointer border border-white/5 px-8 py-8 sm:py-10 md:px-10"
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      <div className="flex items-center justify-between">
-        <h3
-          className={`font-headline pr-6 text-2xl font-bold tracking-tight uppercase transition-colors md:text-[2rem] ${isOpen ? "text-primary" : "group-hover:text-primary"}`}
-        >
-          {question}
-        </h3>
-        <span
-          className={`text-primary transition-transform duration-300 ease-in-out ${
-            isOpen ? "rotate" : "-rotate-45"
-          }`}
-        >
-          {isOpen ? <Minus /> : <X />}
-        </span>
-      </div>
-      <div
-        className={`faq-answer ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-        data-open={isOpen}
-        aria-hidden={!isOpen}
-      >
-        <div className="faq-answer-content overflow-hidden">
-          <p className="text-on-surface-variant mt-5 max-w-3xl text-base leading-relaxed font-light uppercase md:mt-6 md:text-lg">
-            {answer}
-          </p>
-        </div>
-      </div>
-    </div>
   )
 }
