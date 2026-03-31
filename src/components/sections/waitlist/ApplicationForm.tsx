@@ -234,24 +234,38 @@ export default function ApplicationForm({
 
   return (
     <form
-      className="space-y-6 p-6 pt-8 sm:p-8 md:p-16 md:pb-10"
+      className="flex flex-col p-8 pt-4 pb-0 md:p-16 md:pt-8 md:pb-0"
       noValidate
       onSubmit={handleSubmit}
     >
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {fields.slice(0, 2).map((field) => (
-          <ApplicationField
-            disabled={isSubmitting}
-            error={errors[field.name]}
-            field={field}
-            key={field.name}
-            kind={kind}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            value={values[field.name] ?? ""}
-          />
-        ))}
-        {fields.slice(2, 4).map((field) => (
+      <div className="flex flex-col gap-6 pb-6 md:pb-12">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {fields.slice(0, 2).map((field) => (
+            <ApplicationField
+              disabled={isSubmitting}
+              error={errors[field.name]}
+              field={field}
+              key={field.name}
+              kind={kind}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values[field.name] ?? ""}
+            />
+          ))}
+          {fields.slice(2, 4).map((field) => (
+            <ApplicationField
+              disabled={isSubmitting}
+              error={errors[field.name]}
+              field={field}
+              key={field.name}
+              kind={kind}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values[field.name] ?? ""}
+            />
+          ))}
+        </div>
+        {fields.slice(4).map((field) => (
           <ApplicationField
             disabled={isSubmitting}
             error={errors[field.name]}
@@ -264,18 +278,6 @@ export default function ApplicationForm({
           />
         ))}
       </div>
-      {fields.slice(4).map((field) => (
-        <ApplicationField
-          disabled={isSubmitting}
-          error={errors[field.name]}
-          field={field}
-          key={field.name}
-          kind={kind}
-          onBlur={handleBlur}
-          onChange={handleChange}
-          value={values[field.name] ?? ""}
-        />
-      ))}
       <button
         id="submitButton"
         className="bg-primary text-on-primary font-headline kinetic-glow disabled:bg-on-surface-variant w-full cursor-pointer py-6 text-xl font-bold tracking-[0.2em] uppercase transition-all hover:brightness-110 disabled:cursor-not-allowed"
@@ -289,11 +291,11 @@ export default function ApplicationForm({
             : "Join as an Allocator"}
       </button>
       <div
-        className={`form-error ${isError ? "is-open" : ""}`}
+        className={`form-error py-4 md:py-8 ${isError ? "is-open" : ""}`}
         data-open={isError}
         aria-hidden={!isError}
       >
-        <div className="form-error-content border border-red-500/20 bg-red-500/10 px-5 py-4 text-sm leading-relaxed whitespace-pre-line text-[#f96969] uppercase">
+        <div className="form-error-content mb-4 border border-red-500/20 bg-red-500/10 px-5 py-4 text-sm leading-relaxed whitespace-pre-line text-[#f96969] uppercase md:mb-8">
           {feedback.message}
         </div>
       </div>

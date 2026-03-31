@@ -46,7 +46,7 @@ export default function Waitlist({
             </p>
           </div>
           <div className="bg-surface border border-white/10">
-            <div className="bg-surface border-b border-white/10 px-6 pt-6 md:px-16 md:pt-10">
+            <div className="bg-surface border-b border-white/10 p-8 pb-0 md:p-16 md:pb-0">
               <div className="bg-background flex p-1">
                 <button
                   onClick={() => onSelectWaitlistTab("sharp")}
