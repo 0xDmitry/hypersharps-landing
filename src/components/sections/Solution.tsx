@@ -23,9 +23,9 @@ const features = [
 
 export default function Solution() {
   return (
-    <section className="border-y border-white/5 bg-black px-6 py-10 sm:py-22 md:py-26 lg:py-32">
+    <section className="border-y border-white/5 bg-black py-10 sm:py-22 md:py-26 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-6 sm:mb-16 md:mb-20">
+        <div className="mb-6 px-6 sm:mb-16 md:mb-20 lg:px-10">
           <span className="text-primary font-label mb-6 block text-xs tracking-[0.5em] uppercase">
             02. The Solution
           </span>

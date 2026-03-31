@@ -28,7 +28,7 @@ export default function Waitlist({
 
   return (
     <section
-      className="bg-background mx-auto px-6 py-10 sm:py-22 md:py-26 lg:py-32"
+      className="bg-background mx-auto px-0 py-10 sm:py-22 md:px-6 md:py-26 lg:px-10 lg:py-32"
       id="get-early-access"
       ref={successFeedbackRef}
     >
@@ -36,7 +36,7 @@ export default function Waitlist({
         <ApplicationSubmitted activeTab={activeTab} />
       ) : (
         <div className="mx-auto max-w-4xl">
-          <div className="mb-12 text-center sm:mb-16 md:mb-20">
+          <div className="mb-12 px-6 text-center sm:mb-16 md:mb-20">
             <h2 className="font-headline mb-6 text-4xl font-bold tracking-tight uppercase sm:mb-8 sm:text-5xl md:text-7xl">
               Get Early Access
             </h2>

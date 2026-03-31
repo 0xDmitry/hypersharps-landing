@@ -8,10 +8,10 @@ export default function FinalCTA({
   isApplicationSubmitted,
 }: FinalCTAProps) {
   return (
-    <section className="bg-background relative overflow-hidden px-6 py-12 text-center sm:py-32 md:py-40 lg:py-48">
+    <section className="bg-background relative overflow-hidden px-6 py-12 text-center sm:py-32 md:py-40 lg:px-10 lg:py-48">
       <div className="bg-primary/5 absolute inset-0 blur-[150px]"></div>
       <div className="relative z-10 mx-auto max-w-5xl">
-        <h2 className="font-headline mb-10 text-4xl leading-[0.9] font-bold tracking-tight uppercase sm:mb-12 sm:text-5xl md:mb-16 md:text-8xl">
+        <h2 className="font-headline mb-10 text-6xl leading-[0.9] font-bold tracking-tight uppercase sm:mb-12 md:mb-16 md:text-8xl lg:text-[100px]">
           <span className="text-primary italic">Sharps</span> trade
           <br />
           Capital follows

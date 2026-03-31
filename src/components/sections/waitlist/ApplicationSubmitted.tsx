@@ -6,7 +6,7 @@ export default function ApplicationSubmitted({
   activeTab,
 }: ApplicationSubmittedProps) {
   return (
-    <div className="flex flex-col items-center align-middle">
+    <div className="flex flex-col items-center px-6 text-center align-middle">
       <h2 className="font-headline text-primary mb-6 max-w-7xl text-4xl leading-[0.92] font-bold tracking-tight uppercase sm:mb-8 sm:text-5xl md:text-6xl lg:text-8xl">
         {activeTab === "sharp" ? "Application Received" : "You’re on the List"}
       </h2>
