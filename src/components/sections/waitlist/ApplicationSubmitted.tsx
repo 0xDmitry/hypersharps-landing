@@ -19,7 +19,7 @@ export default function ApplicationSubmitted({
         href="https://x.com/hypersharps"
         target="_blank"
         rel="noreferrer"
-        className="bg-primary text-on-primary font-headline kinetic-glow px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all hover:brightness-110"
+        className="bg-primary text-on-primary font-headline kinetic-glow px-10 py-5 text-center text-lg font-bold tracking-tight uppercase transition-all select-none hover:brightness-110"
       >
         Follow HyperSharps on X
       </a>

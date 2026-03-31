@@ -11,7 +11,7 @@ export default function Header({ isApplicationSubmitted }: HeaderProps) {
         <a
           href="/"
           aria-label="Go to home page"
-          className="text-primary font-headline flex items-center gap-5 text-[2rem] font-medium tracking-tight md:text-[2.5rem]"
+          className="text-primary font-headline flex items-center gap-5 text-[2rem] font-medium tracking-tight select-none md:text-[2.5rem]"
         >
           <LogoIcon className="h-11 w-11 md:h-12 md:w-12" />
           HYPERSHARPS
@@ -19,7 +19,7 @@ export default function Header({ isApplicationSubmitted }: HeaderProps) {
         {!isApplicationSubmitted && (
           <a
             href="#get-early-access"
-            className="bg-primary text-on-primary font-headline hidden px-6 py-2.5 text-sm font-bold tracking-wider uppercase transition-all hover:brightness-110 md:inline-block"
+            className="bg-primary text-on-primary font-headline hidden px-6 py-2.5 text-sm font-bold tracking-wider uppercase transition-all select-none hover:brightness-110 md:inline-block"
           >
             Get Early Access
           </a>

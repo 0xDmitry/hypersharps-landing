@@ -21,14 +21,14 @@ export default function FinalCTA({
             <a
               href="#get-early-access"
               onClick={() => onSelectWaitlistTab("sharp")}
-              className="bg-primary text-on-primary font-headline px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all hover:brightness-110"
+              className="bg-primary text-on-primary font-headline px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all select-none hover:brightness-110"
             >
               Apply as a Sharp
             </a>
             <a
               href="#get-early-access"
               onClick={() => onSelectWaitlistTab("allocator")}
-              className="bg-surface text-secondary font-headline hover:bg-surface px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all lg:bg-transparent"
+              className="bg-surface text-secondary font-headline hover:bg-surface px-12 py-6 text-center text-2xl font-bold tracking-tight uppercase transition-all select-none lg:bg-transparent"
             >
               Join as an Allocator
             </a>
