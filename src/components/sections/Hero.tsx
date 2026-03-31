@@ -69,7 +69,7 @@ export default function Hero({
         </div>
 
         <div className="relative z-0 hidden bg-black md:block lg:col-span-5">
-          <div className="relative flex aspect-square items-center justify-center bg-black">
+          <div className="relative mr-0 flex aspect-square items-center justify-center bg-black lg:mr-25 xl:mr-0">
             <div
               aria-hidden="true"
               className="absolute top-1/2 left-1/2 h-390 w-390 max-w-none -translate-x-1/2 -translate-y-1/2 bg-black"
