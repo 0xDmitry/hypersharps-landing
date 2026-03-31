@@ -280,7 +280,7 @@ export default function ApplicationForm({
       </div>
       <button
         id="submitButton"
-        className="bg-primary text-on-primary font-headline kinetic-glow disabled:bg-on-surface-variant w-full cursor-pointer py-6 text-xl font-bold tracking-[0.2em] uppercase transition-all select-none hover:brightness-110 disabled:cursor-not-allowed"
+        className="bg-primary text-on-primary font-headline kinetic-glow disabled:bg-on-surface-variant w-full cursor-pointer py-6 text-xl font-bold tracking-widest uppercase transition-all select-none hover:brightness-110 disabled:cursor-not-allowed"
         disabled={isSubmitting || isValidationError}
         type="submit"
       >
