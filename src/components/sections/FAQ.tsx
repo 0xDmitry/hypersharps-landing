@@ -89,10 +89,10 @@ function FAQItem({ question, answer }: FAQItemProps) {
       <AnimatePresence>
         <motion.div
           initial={false}
-          animate={{ maxHeight: isOpen ? "300px" : 0, opacity: isOpen ? 1 : 0 }}
+          animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
           className="overflow-hidden"
           aria-hidden={!isOpen}
-          style={{ willChange: "max-height, opacity" }}
+          style={{ willChange: "height, opacity" }}
         >
           <p className="text-on-surface-variant mt-5 pr-30 text-base leading-relaxed font-light uppercase md:mt-6 md:text-lg">
             {answer}
