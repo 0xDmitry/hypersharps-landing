@@ -47,7 +47,7 @@ export default function Footer({ isApplicationSubmitted }: FooterProps) {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-14 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center md:flex-row md:text-left">
+      <div className="mx-auto mt-5 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-center md:flex-row md:text-left">
         <div className="text-on-surface-variant font-headline text-[10px] tracking-[0.4em] uppercase">
           © 2026 HyperSharps
         </div>
