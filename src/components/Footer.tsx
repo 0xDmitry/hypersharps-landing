@@ -1,5 +1,6 @@
 import LogoIcon from "./icons/Logo"
 import XIcon from "./icons/X"
+import DiscordIcon from "./icons/Discord"
 
 type FooterProps = {
   isApplicationSubmitted: boolean
@@ -32,6 +33,15 @@ export default function Footer({ isApplicationSubmitted }: FooterProps) {
                 className="text-on-surface-variant hover:text-primary flex h-11 w-11 items-center justify-center gap-2 text-sm uppercase transition-colors"
               >
                 <XIcon className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href="https://discord.gg/KjYQ4gPCDa"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="HyperSharps on X"
+                className="text-on-surface-variant hover:text-primary flex h-11 w-11 items-center justify-center gap-2 text-sm uppercase transition-colors"
+              >
+                <DiscordIcon className="h-4.5 w-4.5" />
               </a>
             </div>
           </div>
